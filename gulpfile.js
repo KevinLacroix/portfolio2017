@@ -12,7 +12,7 @@ const reload = browserSync.reload;
 var dev = true;
 
 gulp.task('styles', () => {
-  return gulp.src('app/styles/main.scss')
+  return gulp.src('app/styles/*')
     .pipe($.plumber())
     .pipe($.if(dev, $.sourcemaps.init()))
     .pipe($.sass.sync({
@@ -21,6 +21,9 @@ gulp.task('styles', () => {
       includePaths: ['.']
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
+    .pipe($.if(!dev, $.combineMq({
+      beautify: false
+    })))
     .pipe($.if(dev, $.sourcemaps.write()))
     .pipe(gulp.dest('.tmp/styles'))
     .pipe(reload({stream: true}));
@@ -71,33 +74,32 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe(gulp.dest('dist'));
 });
 
-// gulp.task('svgSprite', function () {
-//   return gulp.src('app/images/icons/**/*.svg')
-//     .pipe($.svgSprite({
-//       mode: {
-//         css: {
-//           dest: "svg-sprites",
-//           layout: "diagonal",
-//           sprite: "sprite.svg",
-//           bust: false,
-//           render: {
-//             scss: {
-//               dest: "_sprite.scss",
-//               template: "app/images/svg-sprites/_sprite-template.scss"
-//             }
-//           }
-//         }
-//       },
-//       variables: {
-//         mapname: "icons"
-//       }
-//     }))
-//     .pipe(gulp.dest("app/images"));
-// });
+gulp.task('svgSprite', function () {
+  return gulp.src('app/images/icons/**/*.svg')
+    .pipe($.svgSprite({
+      mode: {
+        css: {
+          dest: "svg-sprites",
+          layout: "diagonal",
+          sprite: "sprite.svg",
+          bust: false,
+          render: {
+            scss: {
+              dest: "_sprite.scss",
+              template: "app/images/svg-sprites/_sprite-template.scss"
+            }
+          }
+        }
+      },
+      variables: {
+        mapname: "icons"
+      }
+    }))
+    .pipe(gulp.dest("app/images"));
+});
 
-// gulp.task('images', ['svgSprite'], () => {
-gulp.task('images', () => {
-  return gulp.src('app/images/**/*')
+gulp.task('images', ['svgSprite'], () => {
+  return gulp.src(['app/images/**/*', '!app/images/icons/*', '!app/images/svg-sprites/*'])
     .pipe($.cache($.imagemin()))
     .pipe(gulp.dest('dist/images'));
 });
@@ -141,7 +143,7 @@ gulp.task('serve', () => {
     gulp.watch('app/styles/**/*.scss', ['styles']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/fonts/**/*', ['fonts']);
-    // gulp.watch('app/images/icons/**/*.svg', ['svgSprite']);
+    gulp.watch('app/images/icons/**/*.svg', ['svgSprite']);
     gulp.watch('bower.json', ['wiredep', 'fonts']);
   });
 });
