@@ -1,0 +1,27 @@
+// Structure
+
+%grid-md {
+  padding: 0 20px;
+  max-width: 980px;
+  margin: 0 auto;
+  @include breakpoint($mq-lg) {
+    padding: 0 40px;
+  }
+}
+
+%grid-lg {
+  padding: 0 20px;
+  max-width: 1480px;
+  margin: 0 auto;
+  @include breakpoint($mq-lg) {
+    padding: 0 40px;
+  }
+}
+
+.page-wrapper-md {
+  @extend %grid-md;
+}
+
+.grid-wrapper-lg {
+  @extend %grid-lg;
+}

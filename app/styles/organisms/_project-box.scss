@@ -1,0 +1,67 @@
+// PROJECT BOX ITEM
+
+.project-item {
+  .project-link {
+    position: relative;
+    overflow: hidden;
+    line-height: 1;
+  }
+  .project-caption {
+    position: absolute;
+    transition: opacity 0.25s ease-in-out;
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    &:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+      width: 1px;
+      margin-left: -1px;
+    }
+  }
+  .project-content {
+    width: 75%;
+    padding-bottom: 20px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .project-seemore {
+    position: absolute;
+    height: 40px;
+    padding: 0 10px;
+    background: $red;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .seemore-txt {
+      float: left;
+      line-height: 40px;
+      color: $white;
+    }
+    .seemore-ico {
+      float: right;
+      width: 30px;
+      height: 20px;
+      margin-top: 10px;
+      background: url("../../images/ico-eye.svg") no-repeat;
+      background-size: contain;
+    }
+  }
+  .project-title {
+    margin-bottom: 15px;
+    color: $red;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .project-txt {
+    color: white;
+    text-transform: initial;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.25;
+  }
+}

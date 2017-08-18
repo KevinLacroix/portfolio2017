@@ -1,0 +1,8 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+width="40.7px" height="40.7px" viewBox="-0.4 -4.4 40.7 40.7">
+<g>
+	<path fill="#ccc" d="M-0.4,16L20,36.4L40.4,16L20-4.4L-0.4,16z"/>
+	<path fill="#222" d="M4.2,16L20,31.8L35.8,16L20,0.2L4.2,16z"/>
+  <path fill="#ccc" d="M20,14l-4.6-4.6l-1,1l-1,1L18,16l-4.6,4.6l2,2L20,18l4.6,4.6l2-2L22,16l4.6-4.6l-2-2L20,14z"/>
+</g>
+</svg>

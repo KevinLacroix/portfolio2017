@@ -1,0 +1,73 @@
+// Elements
+
+body {
+  font-family: $openSans;
+  line-height: 1.3;
+  background: $white;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  color: $blackish;
+}
+
+%btn {
+  position: relative;
+  padding: 0;
+  font-size: 16px;
+  border-radius: 2px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.btn-primary--white {
+  @extend %btn;
+  @include cta($white, $blueDark);
+  margin: 0 auto;
+}
+
+.btn-submit {
+  @extend %btn;
+  background: $red;
+  color: $white;
+  text-transform: uppercase;
+}
+
+// Form elements
+
+input, textarea {
+  &:focus {
+    outline: 1px solid $red;
+  }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"] {
+  display: block;
+  height: 38px;
+  padding-left: 10px;
+  width: 100%;
+  border: 1px solid $whitish;
+  border-radius: 2px;
+  font-size: 14px;
+  line-height: 1.4;
+  background: $white;
+  appearance: none;
+  color: $blackish;
+}
+
+textarea {
+  display: block;
+  min-height: 250px;
+  padding-left: 10px;
+  padding-top: 8px;
+  width: 100%;
+  border: 1px solid $whitish;
+  border-radius: 2px;
+  font-size: 14px;
+  line-height: 1.4;
+  background: $white;
+  appearance: none;
+  color: $blackish;
+}
+

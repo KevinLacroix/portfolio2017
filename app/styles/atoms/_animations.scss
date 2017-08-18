@@ -1,0 +1,255 @@
+// Animation
+
+@keyframes animStar {
+  from { transform: translateY(0px) }
+  to { transform: translateY(-2000px) }
+}
+
+@keyframes bounceVertical {
+  0% { transform: translateY(0); }
+  83% { transform: translateY(0); }
+  86% { transform: translateY(-12px); }
+  89% { transform: translateY(10px); }
+  92% { transform: translateY(-7px); }
+  95% { transform: translateY(4px); }
+  97% { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
+}
+
+.anim-bounceVertical {
+  animation: bounceVertical 6s infinite;
+}
+
+@keyframes bounceHorizontal {
+  0% { transform:translateX(0) }
+  89% { transform:translateX(0) }
+  90% { transform:translateX(5px) }
+  91% { transform:translateX(0) }
+  92% { transform:translateX(-5px) }
+  93% { transform:translateX(0) }
+  94% { transform:translateX(4px) }
+  95% { transform:translateX(0) }
+  96% { transform:translateX(-4px) }
+  97% { transform:translateX(2px) }
+  98% { transform:translateX(0) }
+  99% { transform:translateX(-2px) }
+  100% { transform:translateX(0) }
+}
+
+.anim-bounceHorizontal {
+  animation: bounceHorizontal 6s linear infinite;
+}
+
+// Anim btn submit
+
+.anim-3d {
+  padding: 0;
+  line-height: 44px;
+  perspective: 5000px;
+  .anim-3d-inner {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    background: $red;
+    transition: transform 0.3s;
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+    &:before {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: darken($red, 30%);
+      content: attr(data-hover);
+      transition: background 0.3s;
+      transform: rotateX(-90deg);
+      transform-origin: 50% 0;
+    }
+  }
+  &:hover .anim-3d-inner,
+  &:focus .anim-3d-inner {
+    transform: rotateX(90deg) translateY(-22px);
+    &:before {
+      background: darken($red, 1%);
+    }
+  }
+}
+
+// Animations below copied from Jeet website
+
+.js-scroll-reveal {
+  opacity: 0;
+}
+.was-animated {
+  opacity: 1;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+// Animations
+
+.anim-flipInX {
+  backface-visibility: visible;
+  animation-name: flipInX;
+}
+
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+  40% {
+    transform: perspective(400px) rotateX(-10deg);
+  }
+  70% {
+    transform: perspective(400px) rotateX(10deg);
+  }
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.anim-bounceIn {
+  animation-name: bounceIn;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.anim-bounceInLeft {
+  animation-name: bounceInLeft;
+}
+
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(30px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.anim-bounceInRight {
+  animation-name: bounceInRight;
+}
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-30px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.anim-fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-pulse {
+  animation-name: pulse;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Anim bounceInLeftRepeat similar to anim-bounceHorizontal
+
+.anim-bounceInLeftRepeat {
+  animation-name: bounceInLeftRepeat;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+}
+
+@keyframes bounceInLeftRepeat {
+  0% { opacity: 1; }
+  72% { transform: translateX(0); }
+  80% { transform: translateX(17px); }
+  86% { transform: translateX(0); }
+  90% { transform: translateX(7px); }
+  95% { transform: translateX(0); }
+  98% { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
+
+
+// Anim for typing cursor
+
+.typed-cursor {
+    opacity: 1;
+    animation: blink 1s infinite;
+}
+@keyframes blink{
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-moz-keyframes blink{
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+

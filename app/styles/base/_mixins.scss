@@ -1,0 +1,365 @@
+/* -----------------
+   LIBRARY OF MIXINS
+   ----------------- */
+
+@mixin pseudoElement() {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+
+// Construction of star elements
+
+@function multipleBoxShadow($n) { // n is number of stars required
+  $value: '#{random(2000)}px #{random(2000)}px rgba(255, 255, 255, 0.7)';
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px rgba(255, 255, 255, 0.7)';
+  }
+  @return unquote($value);
+}
+
+// Btn animated
+
+@mixin cta($color1, $color2) {
+  position: relative;
+  z-index: 1;
+  padding: 8px 28px;
+  border: 2px solid $color1;
+  overflow: hidden;
+  text-transform: uppercase;
+  color: $color1;
+  background: $color2;
+  transition: all 0.33s;
+  &:after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    width: 0;
+    height: 500%;
+    top: 50%;
+    left: 50%;
+    background: $color1;
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50%) rotate(-135deg);
+    transition: all 0.33s;
+  }
+  &:hover {
+    color: $color2;
+    &:after {
+      width: 70%;
+      opacity: 1;
+    }
+  }
+}
+
+// Btn more
+
+@mixin ctaMoreOne($color) {
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  text-transform: uppercase;
+  color: $color;
+  &:before,
+  &:after {
+    @include pseudoElement();
+    width: 40px;
+    height: 2px;
+    background: $color;
+    opacity: 0.3;
+    transition: all 0.33s;
+    pointer-events: none;
+  }
+  &:before {
+    top: 0;
+    left: 0;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+  }
+  &:after {
+    right: 0;
+    bottom: 0;
+    transform: rotate(90deg);
+    transform-origin: 100% 2px;
+  }
+  &:hover:before,
+  &:focus:before {
+    left: 50%;
+    transform: rotate(0deg) translateX(-50%);
+    opacity: 1;
+  }
+  &:hover:after,
+  &:focus:after {
+    right: 50%;
+    transform: rotate(0deg) translateX(50%);
+    opacity: 1;
+  }
+}
+
+
+@mixin ctaMoreTwo($color) {
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  text-transform: uppercase;
+  color: $color;
+  &:before,
+  &:after {
+    @include pseudoElement();
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $color;
+    transform: scale(0.75);
+    transition: transform 0.3s;
+  }
+  &:after {
+    opacity: 0;
+    transition: top 0.3s, opacity 0.3s, transform 0.3s;
+  }
+  &:hover {
+    &:before,
+    &:after {
+      transform: scale(1);
+    }
+    &:after {
+      top: 0;
+      opacity: 1;
+    }
+  }
+}
+
+
+// Triangles
+
+
+/// Triangle helper mixin
+/// @param {Direction} $direction - Triangle direction, either `top`, `right`, `bottom` or `left`
+/// @param {Color} $color [currentcolor] - Triangle color
+/// @param {Length} $size [1em] - Triangle size
+@mixin triangle($direction, $color: currentcolor, $size: 35px, $ratio: 2) {
+
+  @include pseudoElement();
+  width: 0;
+  height: 0;
+  z-index: 2;
+
+  @if $direction == top {
+    border-bottom: ($size / $ratio) solid $color;
+  }
+  @if $direction == bottom {
+    border-top: ($size / $ratio) solid $color;
+  }
+  @if $direction == right {
+    border-left: ($size / $ratio) solid $color;
+  }
+  @if $direction == left {
+    border-right: ($size / $ratio) solid $color;
+  }
+
+  $perpendicular-borders: $size solid transparent;
+
+  @if $direction == top or $direction == bottom {
+    border-left:   $perpendicular-borders;
+    border-right:  $perpendicular-borders;
+  } @else if $direction == right or $direction == left {
+    border-bottom: $perpendicular-borders;
+    border-top:    $perpendicular-borders;
+  }
+}
+
+
+// Clearfix
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Remove Clearfix
+@mixin clearNone() {
+  &:before,
+  &:after {
+    display: none;
+  }
+  &:after {
+    clear: none;
+  }
+}
+
+@function ceilHundredths($numbers) {
+  $numbers: $numbers * 100;
+  @if ($numbers < 1) {
+    $numbers: $numbers - 1;
+  } @else {
+    $numbers: $numbers + 1;
+  }
+  @return round($numbers)/ 100;
+}
+
+// Sass mixins : px to em/rem
+@mixin font-size($sizeValue: 16, $lh: 6) {
+  font-size: ($sizeValue) + px; // Fallback for older browsers
+  font-size: ($sizeValue / 10) + rem;
+  $l-height: $sizeValue + $lh;
+  line-height: ceilHundredths($l-height / $sizeValue);
+}
+
+@mixin font($sizeValue: 16, $lh: 6, $fontfamily: $robotoRegular) {
+
+  $font-size: ($sizeValue / 10) + rem;
+  $line-height: ceilHundredths( ($sizeValue + $lh) / $sizeValue);
+
+  @if ($fontfamily == $robotoBlack) {
+    font: normal 900 $font-size/$line-height $roboto, $sansSerif;
+  }
+  @else if ($fontfamily == $robotoBlackItalic){
+    font: italic 900 $font-size/$line-height $roboto, $sansSerif;
+  }
+  @else if ($fontfamily == $robotoBold){
+    font: normal 700 $font-size/$line-height $roboto, $sansSerif;
+  }
+  @else if ($fontfamily == $robotoBoldItalic){
+    font: italic 700 $font-size/$line-height $roboto, $sansSerif;
+  }
+  @else if ($fontfamily == $robotoLight){
+    font: normal 300 $font-size/$line-height $roboto, $sansSerif;
+  }
+  @else if ($fontfamily == $robotoLightItalic){
+    font: italic 300 $font-size/$line-height $roboto, $sansSerif;
+  }
+  @else if ($fontfamily == $robotoMedium){
+    font: normal 500 $font-size/$line-height $roboto, $sansSerif;
+  }
+  @else if ($fontfamily == $robotoMediumItalic){
+    font: italic 500 $font-size/$line-height $roboto, $sansSerif;
+  }
+  @else if ($fontfamily == $robotoItalic){
+    font: italic 400 $font-size/$line-height $roboto, $sansSerif;
+  }
+  @else{
+    font: normal 400 $font-size/$line-height $roboto, $sansSerif;
+  }
+}
+
+// Style placeholder text (Not supported by autoprefixer yet)
+@mixin placeholder-shown {
+  &::-webkit-input-placeholder {
+    text-overflow: ellipsis;
+    padding-right: 2px;
+    @content;
+  }
+  &::-moz-placeholder {
+    // Firefox sets a partial opacity on placeholder text, if you change the color
+    // (e.g. to a shade of gray) you need to set the opacity back to 100%.
+    opacity: 1;
+    text-overflow: ellipsis;
+    padding-right: 2px;
+    @content;
+  }
+  &:-ms-input-placeholder {
+    text-overflow: ellipsis;
+    padding-right: 2px;
+    @content;
+  }
+  // Trying to make it more future-proof, but only support in late 2015 is in WebKit nightlies.
+  &:placeholder-shown {
+    text-overflow: ellipsis;
+    padding-right: 2px;
+    @content;
+  }
+}
+
+// Keep text in one line and can add by default an ellipsis mode
+@mixin ellipsis($mode: ellipsis) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: $mode;
+  display: block;
+}
+
+// Mixin background gradient
+@mixin gradient($start-color, $end-color, $orientation){
+  @if $orientation == vertical{
+    // Vertical
+    background: linear-gradient(to bottom, $start-color 0%, $end-color 100%);
+  }@else if $orientation == horizontal{
+    // Horizontal
+    background: linear-gradient(to right, $start-color 0%, $end-color 100%);
+  }@else if $orientation == diagonal{
+    // Diagonal
+    background: linear-gradient(to bottom right, $start-color 0%, $end-color 100%);
+  }@else{
+    // Radial
+    background: radial-gradient(ellipse at center, $start-color 0%, $end-color 100%);
+  }
+}
+
+
+/// Set the `$sprite` map
+/// @group sprite
+$sprite: map-get($icons, sprite) !default;
+
+/// Retrive an attributes value for a specific icon in the sprite map
+/// @param {string} $icon - The name of the icon
+/// @param {string} $attr - The attribute you wish to retrieve (e.g. width)
+@function sprite-attr($icon, $attr) {
+  $newIcon: map-get($icons, $icon);
+  @if $newIcon == null {
+    @warn "Can't find an icon with the name #{$icon}";
+  }
+  @return map-get($newIcon, $attr);
+}
+
+/// Create a map with the specified icon of attributes
+/// @param {string} $icon - The name of the icon
+@function icon-attr($icon) {
+  $attr: (
+    width: sprite-attr($icon, width),
+    height: sprite-attr($icon, height),
+    x: sprite-attr($icon, backgroundX),
+    y: sprite-attr($icon, backgroundY)
+  );
+
+  @return $attr;
+}
+
+/// Assign the correct SVG background image and dimensions to the element
+%sprite {
+  // display: block;
+  // background-image: url(map-get($sprite, svgPath));
+}
+
+@mixin sprite($icon, $type: all) {
+  @if $type == all {
+    // Shares the backgrounds
+    // @extend %sprite;
+    display: block;
+    background-image: url(map-get($sprite, svgPath));
+  }
+
+  $iconMap: icon-attr($icon);
+
+  // Outputs dimensions in em
+  @if $type == all or $type == size {
+    width: map-get($iconMap, width);
+    height: map-get($iconMap, height);
+  }
+
+  // Outputs background position in em
+  @if $type == all or $type == bg {
+    background-position: map-get($iconMap, x) map-get($iconMap, y);
+  }
+
+}

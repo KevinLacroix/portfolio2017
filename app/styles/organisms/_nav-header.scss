@@ -1,0 +1,62 @@
+// NAV HEADER
+
+.header-nav {
+  display: none;
+  &.is-small {
+    height: 70px;
+    background: rgba($black, 0.95);
+  }
+  @include breakpoint($mq-lg) {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    padding: 0 100px;
+    transition: background-color 0.25s linear, height 0.25s linear, padding-top 0.25s linear;
+  }
+  .header-nav-list {
+    @include breakpoint($mq-lg) {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
+  }
+  .header-nav-item {
+    &.is-active {
+      .header-nav-link {
+        color: $red;
+      }
+    }
+  }
+  .header-nav-link {
+    position: relative;
+    color: $white;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: color 0.25s ease-in;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 0;
+      right: 0;
+      height: 2px;
+      bottom: -6px;
+      background: $red;
+      transition: width 0.5s cubic-bezier(0.86, 0, 0.07, 1)
+    }
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}

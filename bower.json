@@ -1,0 +1,49 @@
+{
+  "name": "portfolio2016",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "jquery.easing": "^1.3.1",
+    "modernizr": "~2.8.1",
+    "classie": "^1.0.1",
+    "meyer-reset": "*",
+    "tweenlite": "^1.11.5",
+    "raf.js": "^0.0.4",
+    "Snap.svg": "snap.svg#^0.4.1",
+    "normalize-scss": "^3.0.3",
+    "breakpoint-sass": "^2.7.0",
+    "direction-aware-hover-effect": "*",
+    "lavalamp": "^1.0.8",
+    "tmsolution-animatedmodal": "^0.1.0",
+    "offcanvasmenueffects": "*",
+    "typed.js": "^1.1.4",
+    "waypoints": "^4.0.1"
+  },
+  "overrides": {
+    "meyer-reset": {
+      "main": "stylesheets/_meyer-reset.scss"
+    },
+    "direction-aware-hover-effect": {
+      "main": "js/jquery.hoverdir.js"
+    },
+    "tmsolution-animatedmodal": {
+      "main": [
+        "demo/js/animatedModal.min.js",
+        "demo/css/animate.min.css"
+      ]
+    },
+    "offcanvasmenueffects": {
+      "main": [
+        "js/main3.js",
+        "css/menu_elastic.css"
+      ]
+    },
+    "waypoints": {
+      "main": "lib/jquery.waypoints.js"
+    }
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  }
+}
