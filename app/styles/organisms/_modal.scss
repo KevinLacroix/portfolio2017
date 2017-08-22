@@ -26,12 +26,12 @@
     margin-bottom: 20px;
   }
   .modal-btn-close {
+    @include sprite("ico-close");
     position: absolute;
     top: 20px;
     right: 40px;
     width: 40px;
     height: 40px;
-    background: url("../../images/ico-close.svg") no-repeat;
     cursor: pointer;
     transition: transform 0.33s ease-in-out;
     &:hover {

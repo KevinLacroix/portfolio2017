@@ -146,6 +146,7 @@ $(document).ready(function() {
   Portfolio.reSize();
   Portfolio.bindSticky();
   Portfolio.smoothScroll();
+  Portfolio.stickyNav();
 
   // Gears FAQ
   if ( $('.timeline-cogs').length ) {
@@ -170,7 +171,7 @@ $(document).ready(function() {
 
     // PLUGIN FOR DIRECTION-AWARE HOVER EFFECT
 
-    if ($('.projects-section').length) {
+    if ($('.portfolio-section').length) {
       $('.project-item').hoverdir({hoverElem: '.project-caption'});
     }
 

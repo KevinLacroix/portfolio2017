@@ -125,23 +125,17 @@ $shadowsMedium: multipleBoxShadow(100);
     color: $white;
   }
   .page-title-main {
+    @include font(24, 6, $openSans);
     margin-bottom: 6px;
-    font-size: 24px;
-    line-height: 1.2;
-    font-weight: 300;
     text-transform: uppercase;
   }
   .page-title-second {
-    font-size: 16px;
-    font-weight: 300;
+    @include font(16, 6, $openSans);
   }
   .btn-down {
+    @include sprite("ico-double-arrow");
     position: relative;
     z-index: 6;
-    width: 30px;
-    height: 30px;
-    background: url("../../images/ico-double-arrow.svg") no-repeat;
-    background-size: contain;
     cursor: pointer;
   }
 }

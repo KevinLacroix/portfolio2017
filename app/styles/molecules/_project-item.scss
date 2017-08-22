@@ -1,4 +1,4 @@
-// PROJECT BOX ITEM
+// PROJECT ITEM
 
 .project-item {
   .project-link {
@@ -13,6 +13,7 @@
     width: 100%;
     height: 100%;
     text-align: center;
+    pointer-events: none;
     &:before {
       content: '';
       display: inline-block;
@@ -42,12 +43,11 @@
       color: $white;
     }
     .seemore-ico {
+      @include sprite("ico-eye");
       float: right;
       width: 30px;
       height: 20px;
       margin-top: 10px;
-      background: url("../../images/ico-eye.svg") no-repeat;
-      background-size: contain;
     }
   }
   .project-title {

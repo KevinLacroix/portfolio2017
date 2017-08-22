@@ -21,10 +21,11 @@
   background: $white;
   .section-intro {
     @extend %grid-md;
+    @include font(16, 6, $openSans);
     margin-bottom: 40px;
     line-height: 1.3;
     text-align: center;
-    color: $blackish;
+    color: $black;
   }
   .grid-wrapper-lg {
     @include breakpoint($mq-sm) {
