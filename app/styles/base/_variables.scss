@@ -3,11 +3,19 @@
    ------------------ */
 
 // font sizes
+
 $base-font-size     : 16px;
 $base-line-height   : 1.25;
-$base-letter-spacing: 1;
+$base-letter-spacing: 1px;
 
-// Variables
+// font stacks
+
+$sansSerif          : sans-serif;
+$openSans           : "Open Sans";
+$openSansLight      : "Open Sans Light";
+$openSansMedium     : "Open Sans Medium";
+
+// Colors
 
 $black              : #000;
 $blackish           : #222;
@@ -19,8 +27,6 @@ $whitish            : #e4e4e4;
 $red                : #f16058;
 $blueLight          : #47aaff;
 $blueDark           : #0148a8;
-
-$openSans: 'Open Sans', sans-serif;
 
 // Breakpoints
 

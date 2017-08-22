@@ -10,6 +10,7 @@
 // Base
 @import "app/styles/base/base";
 @import "app/styles/atoms/atoms";
+@import "app/styles/molecules/molecules";
 @import "app/styles/organisms/organisms";
 
 
@@ -19,13 +20,13 @@
   padding: 40px 0 60px 0;
   background: $white;
   .section-intro {
+    @extend %grid-md;
     margin-bottom: 40px;
     line-height: 1.3;
     text-align: center;
     color: $blackish;
   }
   .grid-wrapper-lg {
-    // @include sprite("ico-close");
     @include breakpoint($mq-sm) {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -55,65 +56,15 @@
 }
 
 
-// Work With Me
-
-.work-with-me {
-  padding: 60px 0;
-  background: url("../../images/bg-dot-pattern.svg") center center $white;
-  .section-intro {
-    margin-bottom: 40px;
-    text-align: center;
-    line-height: 1.3;
-  }
-}
-
-
 // Skill Section
 
 .skill-section {
   padding: 60px 0;
-  background: url("../../images/bg-dot-pattern.svg") center center $white;
+  background: $blueLight;
   .section-intro {
     margin-bottom: 40px;
     text-align: center;
     line-height: 1.3;
-  }
-  .grid-half {
-    position: relative;
-    min-height: 300px;
-  }
-  .skill-txt-wrapper {
-    // display: none;
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    top: 20px;
-    left: 0;
-    transition: all 0.3s ease-in-out;
-    &.is-active {
-      opacity: 1;
-      visibility: visible;
-      top: 0;
-      left: 0;
-      transition: all 0.3s ease-in-out 0.3s;
-    }
-    .skill-title {
-      position: relative;
-      padding: 4px 0 4px 25px;
-      margin-bottom: 12px;
-      font-size: 28px;
-      color: $white;
-      background: $greyDark;
-      text-transform: uppercase;
-      &:before {
-        @include pseudoElement();
-        top: 0;
-        left: 0;
-        width: 10px;
-        height: 100%;
-        background: $red;
-      }
-    }
   }
   .skill-bar-wrapper {
     height: 40px;
@@ -151,104 +102,6 @@
 }
 
 
-// Responsive Websites
-
-.responsive-websites {
-  position: relative;
-  min-height: 600px;
-  padding: 60px 0;
-  text-align: center;
-  background: $blueLight;
-  .section-intro {
-    margin-bottom: 40px;
-    text-align: center;
-    line-height: 1.3;
-  }
-  .cell-half {
-    padding: 30px;
-  }
-  .morphing-devices-svg {
-    svg {
-      max-width: 100%;
-      visibility: hidden;
-    }
-  }
-  .responsive-txt-content {
-    color: $white;
-  }
-}
-
-
-
-// INTER SECTION: TESTIMONIALS
-
-// Override
-.owl-theme .owl-controls .owl-page span {
-  background: $white;
-  border-radius: 2px;
-  transform: rotate(45deg);
-}
-.owl-theme .owl-controls {
-  margin-top: 30px;
-}
-
-.inter-section--testimonials {
-  .testimonials-cite {
-    margin-bottom: 20px;
-    font-size: 24px;
-  }
-  .testimonials-author {
-    text-transform: uppercase;
-  }
-}
-
-
-// MODAL BLOCK
-
-.modal-block {
-  color: $white;
-  .modal-header {
-    height: 80px;
-    background: $blackish;
-  }
-  .page-wrapper-md {
-    position: relative;
-    padding-top: 20px;
-    height: 100%;
-  }
-  .modal-title {
-    font-size: 32px;
-    line-height: 1.2;
-    color: $grey;
-    text-transform: uppercase;
-  }
-  .modal-subtitle {
-    margin-bottom: 15px;
-    font-size: 18px;
-    text-transform: uppercase;
-  }
-  .modal-txt {
-    margin-bottom: 20px;
-  }
-  .modal-btn-close {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    width: 40px;
-    height: 40px;
-    background: url("../../images/ico-close.svg") no-repeat;
-    cursor: pointer;
-    transition: transform 0.33s ease-in-out;
-    &:hover {
-      transform: rotate(-90deg);
-    }
-  }
-  .modal-content {
-    padding-top: 80px;
-  }
-}
-
-
 // SKILL BLOCK
 
 .timeline-section {
@@ -256,78 +109,36 @@
   overflow: hidden;
   padding: 60px 0;
   background: $white;
-}
-
-.timeline-list {
-  position: relative;
-  z-index: 1;
-  .timeline-item {
-    margin-bottom: 10px;
-    &.is-active {
-      .timeline-item-title {
-        background: $blueDark;
-      }
-      .timeline-item-txt {
-        padding: 10px;
-        max-height: none;
-        opacity: 1;
-        transition: max-height 0.8s cubic-bezier(0, 1, 0, 1), padding-top 0.3s ease-in-out, opacity 0.2s ease-in-out;
-      }
-    }
-  }
-  .timeline-item-title {
-    display: flex;
+  .timeline-list {
     position: relative;
-    align-items: center;
-    padding: 10px 50px 10px 20px;
-    min-height: 56px;
-    font-size: 20px;
-    color: $white;
-    background: $blueLight;
-    cursor: pointer;
-    &:after {
-      @include triangle(right, $white, 10px, 1);
-      right: 20px;
-      margin-top: -10px;
-      top: 50%
+    z-index: 1;
+    .timeline-item {
+      margin-bottom: 10px;
     }
   }
-  .timeline-item-txt {
-    padding: 0;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.8s cubic-bezier(0, 1, 0, 1), padding-top 0.3s ease-in-out, opacity 0.2s ease-in-out;
+  .timeline-cogs {
+    position: absolute;
+    width: 30%;
+    &.timeline-cogs--left {
+      top: -65px;
+      left: -7.5%;
+    }
+    &.timeline-cogs--right {
+      transform: rotate(180deg);
+      bottom: -65px;
+      right: -7.5%;
+    }
+    svg {
+      float: left;
+    }
+
+    svg:nth-child(2) {
+      margin-left: 24%;
+      margin-top: -26%;
+    }
+
+    svg:nth-child(3) {
+      margin-top: -26%;
+    }
   }
 }
-
-
-.timeline-cogs {
-  position: absolute;
-  width: 30%;
-  &.timeline-cogs--left {
-    top: -65px;
-    left: -7.5%;
-  }
-  &.timeline-cogs--right {
-    transform: rotate(180deg);
-    bottom: -65px;
-    right: -7.5%;
-  }
-  svg {
-    float: left;
-  }
-
-  svg:nth-child(2) {
-    margin-left: 24%;
-    margin-top: -26%;
-  }
-
-  svg:nth-child(3) {
-    margin-top: -26%;
-  }
-}
-
-
-
-

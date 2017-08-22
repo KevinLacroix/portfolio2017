@@ -2,12 +2,13 @@
    LIBRARY OF MIXINS
    ----------------- */
 
+// Base for background on pseudo-element
+
 @mixin pseudoElement() {
   content: "";
   position: absolute;
   display: block;
 }
-
 
 // Construction of star elements
 
@@ -138,11 +139,6 @@
 
 // Triangles
 
-
-/// Triangle helper mixin
-/// @param {Direction} $direction - Triangle direction, either `top`, `right`, `bottom` or `left`
-/// @param {Color} $color [currentcolor] - Triangle color
-/// @param {Length} $size [1em] - Triangle size
 @mixin triangle($direction, $color: currentcolor, $size: 35px, $ratio: 2) {
 
   @include pseudoElement();
@@ -176,6 +172,7 @@
 
 
 // Clearfix
+
 @mixin clearfix() {
   &:before,
   &:after {
@@ -188,6 +185,7 @@
 }
 
 // Remove Clearfix
+
 @mixin clearNone() {
   &:before,
   &:after {
@@ -197,6 +195,8 @@
     clear: none;
   }
 }
+
+// Ceil on Hundredths
 
 @function ceilHundredths($numbers) {
   $numbers: $numbers * 100;
@@ -208,7 +208,8 @@
   @return round($numbers)/ 100;
 }
 
-// Sass mixins : px to em/rem
+// px to em/rem
+
 @mixin font-size($sizeValue: 16, $lh: 6) {
   font-size: ($sizeValue) + px; // Fallback for older browsers
   font-size: ($sizeValue / 10) + rem;
@@ -216,40 +217,21 @@
   line-height: ceilHundredths($l-height / $sizeValue);
 }
 
-@mixin font($sizeValue: 16, $lh: 6, $fontfamily: $robotoRegular) {
+// px to em/rem and font-family
+
+@mixin font($sizeValue: 16, $lh: 6, $fontfamily: $openSans) {
 
   $font-size: ($sizeValue / 10) + rem;
   $line-height: ceilHundredths( ($sizeValue + $lh) / $sizeValue);
 
-  @if ($fontfamily == $robotoBlack) {
-    font: normal 900 $font-size/$line-height $roboto, $sansSerif;
+  @if ($fontfamily == $openSansLight) {
+    font: normal 300 $font-size/$line-height $openSans, $sansSerif;
   }
-  @else if ($fontfamily == $robotoBlackItalic){
-    font: italic 900 $font-size/$line-height $roboto, $sansSerif;
-  }
-  @else if ($fontfamily == $robotoBold){
-    font: normal 700 $font-size/$line-height $roboto, $sansSerif;
-  }
-  @else if ($fontfamily == $robotoBoldItalic){
-    font: italic 700 $font-size/$line-height $roboto, $sansSerif;
-  }
-  @else if ($fontfamily == $robotoLight){
-    font: normal 300 $font-size/$line-height $roboto, $sansSerif;
-  }
-  @else if ($fontfamily == $robotoLightItalic){
-    font: italic 300 $font-size/$line-height $roboto, $sansSerif;
-  }
-  @else if ($fontfamily == $robotoMedium){
-    font: normal 500 $font-size/$line-height $roboto, $sansSerif;
-  }
-  @else if ($fontfamily == $robotoMediumItalic){
-    font: italic 500 $font-size/$line-height $roboto, $sansSerif;
-  }
-  @else if ($fontfamily == $robotoItalic){
-    font: italic 400 $font-size/$line-height $roboto, $sansSerif;
+  @else if ($fontfamily == $openSansMedium){
+    font: italic 600 $font-size/$line-height $openSans, $sansSerif;
   }
   @else{
-    font: normal 400 $font-size/$line-height $roboto, $sansSerif;
+    font: normal 400 $font-size/$line-height $openSans, $sansSerif;
   }
 }
 
@@ -335,16 +317,8 @@ $sprite: map-get($icons, sprite) !default;
   @return $attr;
 }
 
-/// Assign the correct SVG background image and dimensions to the element
-%sprite {
-  // display: block;
-  // background-image: url(map-get($sprite, svgPath));
-}
-
 @mixin sprite($icon, $type: all) {
   @if $type == all {
-    // Shares the backgrounds
-    // @extend %sprite;
     display: block;
     background-image: url(map-get($sprite, svgPath));
   }

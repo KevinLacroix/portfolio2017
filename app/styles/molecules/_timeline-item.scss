@@ -1,0 +1,37 @@
+.timeline-item {
+  &.is-active {
+    .timeline-item-title {
+      background: $blueDark;
+    }
+    .timeline-item-txt {
+      padding: 10px;
+      max-height: none;
+      opacity: 1;
+      transition: max-height 0.8s cubic-bezier(0, 1, 0, 1), padding-top 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    }
+  }
+  .timeline-item-title {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 10px 50px 10px 20px;
+    min-height: 56px;
+    font-size: 20px;
+    color: $white;
+    background: $blueLight;
+    cursor: pointer;
+    &:after {
+      @include triangle(right, $white, 10px, 1);
+      right: 20px;
+      margin-top: -10px;
+      top: 50%
+    }
+  }
+  .timeline-item-txt {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.8s cubic-bezier(0, 1, 0, 1), padding-top 0.3s ease-in-out, opacity 0.2s ease-in-out;
+  }
+}

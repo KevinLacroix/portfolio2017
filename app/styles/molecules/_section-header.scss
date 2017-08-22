@@ -1,0 +1,52 @@
+// Section Header
+
+%section-header {
+  margin-bottom: 20px;
+  opacity: 1;
+  text-align: center;
+  @include breakpoint($mq-lg) {
+    // opacity: 0;
+  }
+  .section-title {
+    position: relative;
+    padding-bottom: 30px;
+    font-size: 24px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    @include breakpoint($mq-lg) {
+      font-size: 30px;
+    }
+    &:after {
+      @include pseudoElement();
+      left: 50%;
+      bottom: 0;
+      margin-left: -48px;
+    }
+  }
+}
+
+// Sections with white background
+
+.section-header--dark {
+  @extend %section-header;
+  color: $white;
+  .section-title {
+    &:after {
+      @include sprite("ico-border-white");
+    }
+  }
+}
+
+
+// Sections with colored background
+
+.section-header--white {
+  @extend %section-header;
+  color: $blackish;
+  .section-title {
+    &:after {
+      @include sprite("ico-border-black");
+    }
+  }
+}

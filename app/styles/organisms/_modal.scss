@@ -1,0 +1,44 @@
+// MODAL BLOCK
+
+.modal-block {
+  color: $white;
+  .modal-header {
+    height: 80px;
+    background: $blackish;
+  }
+  .page-wrapper-md {
+    position: relative;
+    padding-top: 20px;
+    height: 100%;
+  }
+  .modal-title {
+    font-size: 32px;
+    line-height: 1.2;
+    color: $grey;
+    text-transform: uppercase;
+  }
+  .modal-subtitle {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  .modal-txt {
+    margin-bottom: 20px;
+  }
+  .modal-btn-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    background: url("../../images/ico-close.svg") no-repeat;
+    cursor: pointer;
+    transition: transform 0.33s ease-in-out;
+    &:hover {
+      transform: rotate(-90deg);
+    }
+  }
+  .modal-content {
+    padding-top: 80px;
+  }
+}

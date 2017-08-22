@@ -37,10 +37,10 @@
     }
   }
   .header-nav-link {
+    @include font(14, 6, $openSans);
     position: relative;
     color: $white;
     text-transform: uppercase;
-    font-size: 14px;
     transition: color 0.25s ease-in;
     &:after {
       content: "";
