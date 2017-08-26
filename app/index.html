@@ -40,22 +40,22 @@
         <nav class="mobile-nav menu">
             <ul class="mobile-nav-list">
                 <li class="mobile-nav-item">
-                    <a class="mobile-nav-link" href="#" title="">Portfolio</a>
+                    <a class="mobile-nav-link" href="#" data-href="#portfolio" title="">Work</a>
                 </li>
                 <li class="mobile-nav-item">
-                    <a class="mobile-nav-link" href="#" title="">Skills</a>
+                    <a class="mobile-nav-link" href="#" data-href="#skills" title="">Skills</a>
                 </li>
                 <li class="mobile-nav-item">
-                    <a class="mobile-nav-link" href="#" title="">About</a>
+                    <a class="mobile-nav-link" href="#" data-href="#employment" title="">Employment</a>
                 </li>
                 <li class="mobile-nav-item">
-                    <a class="mobile-nav-link" href="#" title="">Employment</a>
+                    <a class="mobile-nav-link" href="#" data-href="#about" title="">About</a>
                 </li>
                 <li class="mobile-nav-item">
-                    <a class="mobile-nav-link" href="#" title="">References</a>
+                    <a class="mobile-nav-link" href="#" data-href="#references" title="">References</a>
                 </li>
                 <li class="mobile-nav-item">
-                    <a class="mobile-nav-link" href="#" title="">Contact</a>
+                    <a class="mobile-nav-link" href="#" data-href="#contact" title="">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -70,33 +70,33 @@
     <div class="content-wrap">
 
     <main class="page-main">
-        <div class="content">
+        <div class="content"> <!-- Class needed by offcanvasmenueffects -->
 
         <!-- Start dynamic content for home page -->
 
-        <header class="page-header-big" id="js-big-header">
+        <header class="page-header-big waypoint" id="js-big-header">
             <div class="header-nav-mobile">
                 <button class="menu-button" id="open-button">Open Menu</button>
             </div>
             <nav class="header-nav">
                 <ul class="header-nav-list">
                     <li class="header-nav-item">
-                        <a class="header-nav-link" href="#portfolio" title="">Work</a>
+                        <a class="header-nav-link" href="#" data-href="#portfolio" title="">Work</a>
                     </li>
                     <li class="header-nav-item">
-                        <a class="header-nav-link" href="#skills" title="">Skills</a>
+                        <a class="header-nav-link" href="#" data-href="#skills" title="">Skills</a>
                     </li>
                     <li class="header-nav-item">
-                        <a class="header-nav-link" href="#about" title="">About</a>
+                        <a class="header-nav-link" href="#" data-href="#employment" title="">Employment</a>
                     </li>
                     <li class="header-nav-item">
-                        <a class="header-nav-link" href="#employment" title="">Employment</a>
+                        <a class="header-nav-link" href="#" data-href="#about" title="">About</a>
                     </li>
                     <li class="header-nav-item">
-                        <a class="header-nav-link" href="#references" title="">References</a>
+                        <a class="header-nav-link" href="#" data-href="#references" title="">References</a>
                     </li>
                     <li class="header-nav-item">
-                        <a class="header-nav-link" href="#contact" title="">Contact</a>
+                        <a class="header-nav-link" href="#" data-href="#contact" title="">Contact</a>
                     </li>
                 </ul>
             </nav>
@@ -119,22 +119,22 @@
 
         <section id="portfolio" class="portfolio-section waypoint">
 
-            <header class="section-header--white grid-md js-scroll-reveal js-decoTitle">
-                <h1 class="section-title">Recent work</h1>
+            <header class="section-header--white">
+                <h2 class="section-title">Recent work</h2>
+                <p class="section-intro">With four years of corporate and agency experience, I have worked on a variety of large and small projects that kept me challenged and working with the latest techniques and technologies. It allowed me to quickly get solid and hands-on experience in frontend and interactive development. All of the websites I worked on were mobile-first and responsive.</p>
             </header>
-            <p class="section-intro grid-md">With four years of corporate and agency experience, I have worked on a variety of large and small projects that kept me challenged and working with the latest techniques and technologies. It allowed me to quickly get solid and hands-on experience in frontend and interactive development. All of the websites I worked on were mobile-first and responsive.</p>
-            <div class="grid-wrapper-lg" id="gallery">
+            <div class="page-wrapper-lg" id="gallery">
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal1" class="project-link" href="#animatedModal1" title="">
                         <figure class="project-figure">
                             <img class="project-img" src="images/img-test-1.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
-                                    <h3 class="project-title">Aptus Health</h3>
-                                    <p class="project-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <h3 class="project-title">Francetvsport</h3>
+                                    <p class="project-txt">This project is a complete redisign of the Sport platform</p>
                                 </div>
                                 <div class="project-seemore">
-                                    <span class="seemore-txt">Voir plus</span>
+                                    <span class="seemore-txt">See more</span>
                                     <span class="seemore-ico"></span>
                                 </div>
                             </figcaption>
@@ -147,11 +147,11 @@
                             <img class="project-img" src="images/img-test-1.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
-                                    <h3 class="project-title">Aptus Health</h3>
-                                    <p class="project-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <h3 class="project-title">Univadis</h3>
+                                    <p class="project-txt">The website is a platform dedicated to doctors from different trades</p>
                                 </div>
                                 <div class="project-seemore">
-                                    <span class="seemore-txt">Voir plus</span>
+                                    <span class="seemore-txt">See more</span>
                                     <span class="seemore-ico"></span>
                                 </div>
                             </figcaption>
@@ -164,11 +164,11 @@
                             <img class="project-img" src="images/img-test-1.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
-                                    <h3 class="project-title">Aptus Health</h3>
-                                    <p class="project-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <h3 class="project-title">Chanel</h3>
+                                    <p class="project-txt">For this short project, I implemented some widgets on a one-page that needed to be independent</p>
                                 </div>
                                 <div class="project-seemore">
-                                    <span class="seemore-txt">Voir plus</span>
+                                    <span class="seemore-txt">See more</span>
                                     <span class="seemore-ico"></span>
                                 </div>
                             </figcaption>
@@ -181,11 +181,11 @@
                             <img class="project-img" src="images/img-test-1.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
-                                    <h3 class="project-title">Aptus Health</h3>
-                                    <p class="project-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <h3 class="project-title">Chaumet</h3>
+                                    <p class="project-txt">This project was the redesign of the existing Chaumet website</p>
                                 </div>
                                 <div class="project-seemore">
-                                    <span class="seemore-txt">Voir plus</span>
+                                    <span class="seemore-txt">See more</span>
                                     <span class="seemore-ico"></span>
                                 </div>
                             </figcaption>
@@ -198,11 +198,11 @@
                             <img class="project-img" src="images/img-test-1.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
-                                    <h3 class="project-title">Aptus Health</h3>
-                                    <p class="project-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <h3 class="project-title">Traceone</h3>
+                                    <p class="project-txt">The project is an application allowing better visibility on products supply chain</p>
                                 </div>
                                 <div class="project-seemore">
-                                    <span class="seemore-txt">Voir plus</span>
+                                    <span class="seemore-txt">See more</span>
                                     <span class="seemore-ico"></span>
                                 </div>
                             </figcaption>
@@ -215,11 +215,11 @@
                             <img class="project-img" src="images/img-test-1.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
-                                    <h3 class="project-title">Aptus Health</h3>
-                                    <p class="project-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <h3 class="project-title">Jean-Loup Lacroix</h3>
+                                    <p class="project-txt">The project is a simple blog done on Drupal 8</p>
                                 </div>
                                 <div class="project-seemore">
-                                    <span class="seemore-txt">Voir plus</span>
+                                    <span class="seemore-txt">See more</span>
                                     <span class="seemore-ico"></span>
                                 </div>
                             </figcaption>
@@ -232,11 +232,11 @@
                             <img class="project-img" src="images/img-test-1.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
-                                    <h3 class="project-title">Aptus Health</h3>
-                                    <p class="project-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <h3 class="project-title">Lesevades</h3>
+                                    <p class="project-txt">This project is the redesign of the agency website</p>
                                 </div>
                                 <div class="project-seemore">
-                                    <span class="seemore-txt">Voir plus</span>
+                                    <span class="seemore-txt">See more</span>
                                     <span class="seemore-ico"></span>
                                 </div>
                             </figcaption>
@@ -249,11 +249,147 @@
                             <img class="project-img" src="images/img-test-1.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
-                                    <h3 class="project-title">Aptus Health</h3>
-                                    <p class="project-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <h3 class="project-title">Instachef</h3>
+                                    <p class="project-txt">This project is a platform putting in relation cookers and clients</p>
                                 </div>
                                 <div class="project-seemore">
-                                    <span class="seemore-txt">Voir plus</span>
+                                    <span class="seemore-txt">See more</span>
+                                    <span class="seemore-ico"></span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
+                <article class="project-item js-scroll-reveal js-fadeInUp">
+                    <a id="trigger-modal4" class="project-link" href="#animatedModal4" title="">
+                        <figure class="project-figure">
+                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <figcaption class="project-caption">
+                                <div class="project-content">
+                                    <h3 class="project-title">Eco-verdure</h3>
+                                    <p class="project-txt">Website creation for a company that offers landscape design, construction and maintenance services</p>
+                                </div>
+                                <div class="project-seemore">
+                                    <span class="seemore-txt">See more</span>
+                                    <span class="seemore-ico"></span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
+                <article class="project-item js-scroll-reveal js-fadeInUp">
+                    <a id="trigger-modal4" class="project-link" href="#animatedModal4" title="">
+                        <figure class="project-figure">
+                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <figcaption class="project-caption">
+                                <div class="project-content">
+                                    <h3 class="project-title">Norclair</h3>
+                                    <p class="project-txt">This project is a new website for a company specialized in the building industry</p>
+                                </div>
+                                <div class="project-seemore">
+                                    <span class="seemore-txt">See more</span>
+                                    <span class="seemore-ico"></span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
+                <article class="project-item js-scroll-reveal js-fadeInUp">
+                    <a id="trigger-modal4" class="project-link" href="#animatedModal4" title="">
+                        <figure class="project-figure">
+                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <figcaption class="project-caption">
+                                <div class="project-content">
+                                    <h3 class="project-title">pcgcarmon</h3>
+                                    <p class="project-txt">This project is a new website for a real estate agency</p>
+                                </div>
+                                <div class="project-seemore">
+                                    <span class="seemore-txt">See more</span>
+                                    <span class="seemore-ico"></span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
+                <article class="project-item js-scroll-reveal js-fadeInUp">
+                    <a id="trigger-modal4" class="project-link" href="#animatedModal4" title="">
+                        <figure class="project-figure">
+                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <figcaption class="project-caption">
+                                <div class="project-content">
+                                    <h3 class="project-title">SSJ Foundation</h3>
+                                    <p class="project-txt">This project is a new website for a foundation that help students with scholarship and various services</p>
+                                </div>
+                                <div class="project-seemore">
+                                    <span class="seemore-txt">See more</span>
+                                    <span class="seemore-ico"></span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
+                <article class="project-item js-scroll-reveal js-fadeInUp">
+                    <a id="trigger-modal4" class="project-link" href="#animatedModal4" title="">
+                        <figure class="project-figure">
+                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <figcaption class="project-caption">
+                                <div class="project-content">
+                                    <h3 class="project-title">Clinique medicale 1900</h3>
+                                    <p class="project-txt">This project is simple one page for a clinic</p>
+                                </div>
+                                <div class="project-seemore">
+                                    <span class="seemore-txt">See more</span>
+                                    <span class="seemore-ico"></span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
+                <article class="project-item js-scroll-reveal js-fadeInUp">
+                    <a id="trigger-modal4" class="project-link" href="#animatedModal4" title="">
+                        <figure class="project-figure">
+                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <figcaption class="project-caption">
+                                <div class="project-content">
+                                    <h3 class="project-title">Madysta</h3>
+                                    <p class="project-txt">Le groupe Madysta offre des solutions clés en main en construction et maintenance d’infrastructures de télécommunication sans fil</p>
+                                </div>
+                                <div class="project-seemore">
+                                    <span class="seemore-txt">See more</span>
+                                    <span class="seemore-ico"></span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
+                <article class="project-item js-scroll-reveal js-fadeInUp">
+                    <a id="trigger-modal4" class="project-link" href="#animatedModal4" title="">
+                        <figure class="project-figure">
+                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <figcaption class="project-caption">
+                                <div class="project-content">
+                                    <h3 class="project-title">Crossfit Trois-Rivières</h3>
+                                    <p class="project-txt">CrossFit T-R est un centre de conditionnement physique offrant des cours de groupe coachés et supervisés</p>
+                                </div>
+                                <div class="project-seemore">
+                                    <span class="seemore-txt">See more</span>
+                                    <span class="seemore-ico"></span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
+                <article class="project-item js-scroll-reveal js-fadeInUp">
+                    <a id="trigger-modal4" class="project-link" href="#animatedModal4" title="">
+                        <figure class="project-figure">
+                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <figcaption class="project-caption">
+                                <div class="project-content">
+                                    <h3 class="project-title">MJBC Collection</h3>
+                                    <p class="project-txt">Importateur - Distributeur de designers renommés et marques haut de gamme</p>
+                                </div>
+                                <div class="project-seemore">
+                                    <span class="seemore-txt">See more</span>
                                     <span class="seemore-ico"></span>
                                 </div>
                             </figcaption>
@@ -263,31 +399,39 @@
             </div>
         </section>
 
-        <section class="inter-section--tagline">
-            <div class="page-wrapper-lg aligned-left">
+        <section class="inter-section--tagline waypoint">
+            <div class="page-wrapper-md">
                 <div class="list-keywords1" style="display: none;">
-                    <p><strong>un professionnel</strong></p>
-                    <p><strong>un mec cool</strong></p>
-                    <p><strong>un pro du web</strong></p>
-                    <p><strong>un développeur web</strong></p>
+                    <p><strong>a front-end web developer</strong></p>
+                    <p><strong>a cool and kind guy</strong></p>
+                    <p><strong>self-motivated individual</strong></p>
                 </div>
                 <div class="list-keywords2" style="display: none;">
-                    <p><strong>projet de site web</strong></p>
-                    <p><strong>nouveau design</strong></p>
-                    <p><strong>site e-commerce</strong></p>
-                    <p><strong>site internet ?</strong></p>
+                    <p><strong>a fast-thinking environment</strong></p>
+                    <p><strong>your team</strong></p>
+                    <p><strong>an Agile Scrum environment</strong></p>
                 </div>
-                <div class="grid-md inter-tagline"><span>Vous êtes à la recherche d'<span class="typed-insertion1 tagline-animated"></span></span></div>
-                <div class="grid-md inter-tagline"><span>Pour la création de votre <span class="typed-insertion2 tagline-animated"></span></span></div>
+                <div class="inter-tagline">
+                    <p class="">
+                        <span class="inter-tagline-base">You are looking for </span>
+                        <span class="typed-insertion1 tagline-animated"></span>
+                    </p>
+                </div>
+                <div class="inter-tagline">
+                    <p class="">
+                        <span class="inter-tagline-base">able to fit in </span>
+                        <span class="typed-insertion2 tagline-animated"></span>
+                    </p>
+                </div>
             </div>
         </section>
 
         <section id="skills" class="skill-section waypoint">
 
-            <header class="section-header--white grid-md js-scroll-reveal js-decoTitle">
-                <h1 class="section-title">Professional skills</h1>
+            <header class="section-header--dark">
+                <h2 class="section-title">Professional skills</h2>
+                <p class="section-intro">Disciplined at following the Web best practices, I am continually seeking to improve my quality of code. I have a proficient understanding of cross-browser compatibility issues and ways to work around them. I have sound skills using task runners such as Gulp/Grunt to optimise application for maximum performance and scalability. Previous experience abroad gave me good communication skills in english, both written and verbal.</p>
             </header>
-            <p class="section-intro grid-md">Disciplined at following the Web best practices, I am continually seeking to improve my quality of code. I have a proficient understanding of cross-browser compatibility issues and ways to work around them. I have sound skills using task runners such as Gulp/Grunt to optimise application for maximum performance and scalability. Previous experience abroad gave me good communication skills in english, both written and verbal.</p>
 
             <div class="page-wrapper-lg">
                 <div class="skill-bar-wrapper">
@@ -359,7 +503,7 @@
             </div>
         </section>
 
-        <section class="timeline-section">
+        <section id="employment" class="timeline-section waypoint">
 
             <div class="timeline-cogs timeline-cogs--left">
 
@@ -375,13 +519,10 @@
 
             </div>
 
-            <header class="section-header--white grid-md js-scroll-reveal js-decoTitle">
-                <h1 class="section-title">Education and Employment</h1>
-                <svg xmlns="http://www.w3.org/2000/svg" width="95.06" height="10.69" viewBox="4 4.94 95.06 10.69">
-                  <path fill="none" stroke="#000" stroke-width="3" stroke-miterlimit="10" d="M4 12.5l7.93-4.19 7.98 4.19 7.84-4.19 8 4.19 7.86-4.19 7.98 4.19 7.87-4.19 7.92 4.19 7.92-4.19 7.95 4.19 7.9-4.19 7.91 4.19"/>
-                </svg>
+            <header class="section-header--white">
+                <h2 class="section-title">Education and Employment</h2>
+                <p class="section-intro">I am looking for the opportunity to progress my professional career as a front-end developer, working on interesting and technically challenging projects. Passionate about combining the art of design with the art of programming, I enjoy translating web designs into code. I have an eye for meticulous detail and a focus on continuous improvement.</p>
             </header>
-            <p class="section-intro grid-md">I am looking for the opportunity to progress my professional career as a front-end developer, working on interesting and technically challenging projects. Passionate about combining the art of design with the art of programming, I enjoy translating web designs into code. I have an eye for meticulous detail and a focus on continuous improvement.</p>
 
             <div class="page-wrapper-md">
                 <ul class="timeline-list">
@@ -402,17 +543,26 @@
                 </svg>
 
             </div>
-
         </section>
 
-        <section class="inter-section--aboutMe">
+        <section id="about" class="about-section waypoint">
             <div class="page-wrapper-lg">
-                <h3 class="inter-title">A few words about me:</h3>
-                <p class="inter-subtitle">Originally from Paris, France, I am coming to New-Zealand in October 2017 with a Working Holiday Visa. I am looking for the opportunity to progress my professional career as a front-end developer in Wellington. Beside my enthusiasm about the Web and emerging technologies the Web, I like sport, hiking, travelling, photography, board games, cinema and exhibitions.
-                You want to find out what I studied before I started learning Web Development ?
-                You want to know more detail about my skills, past experiences or my hobbies ?
-                You want to talk to a reference that can tell you more about me ?</p>
+                <div class="section-header--dark page-wrapper-md">
+                    <h2 class="section-title">A few words about me:</h2>
+                    <p class="section-intro">Originally from Paris, France, I am coming to New-Zealand in October 2017 with a Working Holiday Visa. I am looking for the opportunity to progress my professional career as a front-end developer in Wellington. Beside my enthusiasm about the Web and emerging technologies the Web, I like sport, hiking, travelling, photography, board games, cinema and exhibitions.<br>
+                    You want to find out what I studied before I started learning Web Development ?<br>
+                    You want to know more detail about my skills, past experiences or my hobbies ?<br>
+                    You want to talk to a reference that can tell you more about me ?</p>
+                </div>
+                <button class="btn-primary--white">Download my CV</button>
             </div>
+        </section>
+
+        <section id="references" class="references-section waypoint">
+            <header class="section-header--white">
+                <h2 class="section-title">They trusted me</h2>
+                <p class="section-intro">I worked the last two years within an IT services company where I was put on different assignments working with clients from different fields. I had the opportunity to work on heavy traffic websites for a media group and a pharmaceutical company. I also worked for two notorious companies in the luxury sector where pixel-perfect layouts and great performance are a requirement. Before that I had the opportunity to work in web agencies, in Canada, on smaller but not less diverse projects.</p>
+            </header>
         </section>
 
         <!-- Modals -->
@@ -502,11 +652,10 @@
         <!-- End dynamic content for home page -->
 
         <footer id="contact" class="page-footer waypoint">
-            <header class="section-header--dark grid-md js-scroll-reveal js-decoTitle">
-                <h1 class="section-title">Me joindre</h1>
-            </header>
-            <p class="section-intro grid-md">Soucieux du détail, je réalise vos projets web sur mesure avec qualité.<br>
-            N'hésitez pas à me contacter pour discuter de votre projet.</p>
+            <div class="section-header--dark">
+                <h2 class="section-title">Contact me</h2>
+                <p class="section-intro">You are interested in my profile ? You think you may have a position for me within your team ? You want to ask me a question regarding my working Visa in New-Zealand ? Feel free to use the form below to send me a message. I will be physically available for job interviews from the middle/end of october 2017 in Wellington.</p>
+            </div>
             <div class="page-wrapper-md">
                 <form class="js-scroll-reveal">
                     <div class="form-row">
@@ -571,7 +720,6 @@
     <script src="/bower_components/raf.js/raf.js"></script>
     <script src="/bower_components/Snap.svg/dist/snap.svg-min.js"></script>
     <script src="/bower_components/direction-aware-hover-effect/js/jquery.hoverdir.js"></script>
-    <script src="/bower_components/lavalamp/js/jquery.lavalamp.js"></script>
     <script src="/bower_components/tmsolution-animatedmodal/demo/js/animatedModal.min.js"></script>
     <script src="/bower_components/offcanvasmenueffects/js/main3.js"></script>
     <script src="/bower_components/typed.js/dist/typed.min.js"></script>

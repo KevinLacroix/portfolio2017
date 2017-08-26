@@ -10,6 +10,15 @@
   display: block;
 }
 
+// Shorthand for absolute elements that take full width and full height
+
+@mixin absoluteFullSpace() {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 // Construction of star elements
 
 @function multipleBoxShadow($n) { // n is number of stars required
@@ -25,8 +34,9 @@
 @mixin cta($color1, $color2) {
   position: relative;
   z-index: 1;
-  padding: 8px 28px;
+  padding: 10px 30px;
   border: 2px solid $color1;
+  border-radius: 21px;
   overflow: hidden;
   text-transform: uppercase;
   color: $color1;
@@ -46,6 +56,7 @@
     transition: all 0.33s;
   }
   &:hover {
+    border-radius: 0;
     color: $color2;
     &:after {
       width: 70%;
@@ -227,8 +238,11 @@
   @if ($fontfamily == $openSansLight) {
     font: normal 300 $font-size/$line-height $openSans, $sansSerif;
   }
+  @else if ($fontfamily == $openSansItalic){
+    font: italic 400 $font-size/$line-height $openSans, $sansSerif;
+  }
   @else if ($fontfamily == $openSansMedium){
-    font: italic 600 $font-size/$line-height $openSans, $sansSerif;
+    font: normal 600 $font-size/$line-height $openSans, $sansSerif;
   }
   @else{
     font: normal 400 $font-size/$line-height $openSans, $sansSerif;

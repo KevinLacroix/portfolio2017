@@ -1,19 +1,14 @@
 // Section Header
 
 %section-header {
-  margin-bottom: 20px;
-  opacity: 1;
+  @extend %wrapper-md;
   text-align: center;
-  @include breakpoint($mq-lg) {
-    // opacity: 0;
-  }
   .section-title {
     position: relative;
     padding-bottom: 30px;
+    margin-bottom: 22px;
     font-size: 24px;
-    line-height: 1.2;
     text-transform: uppercase;
-    margin-bottom: 15px;
     @include breakpoint($mq-lg) {
       font-size: 30px;
     }
@@ -23,6 +18,11 @@
       bottom: 0;
       margin-left: -48px;
     }
+  }
+  .section-intro {
+    @extend %wrapper-md;
+    @include font(16, 6, $openSans);
+    text-align: center;
   }
 }
 

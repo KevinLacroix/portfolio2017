@@ -1,6 +1,7 @@
 // Structure
 
-%grid-md {
+%wrapper-md {
+  width: 100%;
   padding: 0 20px;
   max-width: 980px;
   margin: 0 auto;
@@ -9,7 +10,8 @@
   }
 }
 
-%grid-lg {
+%wrapper-lg {
+  width: 100%;
   padding: 0 20px;
   max-width: 1480px;
   margin: 0 auto;
@@ -19,9 +21,9 @@
 }
 
 .page-wrapper-md {
-  @extend %grid-md;
+  @extend %wrapper-md;
 }
 
-.grid-wrapper-lg {
-  @extend %grid-lg;
+.page-wrapper-lg {
+  @extend %wrapper-lg;
 }

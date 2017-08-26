@@ -52,13 +52,6 @@ $(function() {
           $this.addClass('was-animated anim-bounceInRight');
         }
 
-        // Anim Title Decoration
-
-        // Anim decoTitle
-        else if ($this.hasClass('js-decoTitle')) {
-          $this.addClass('anim-decoTitle');
-        }
-
         // Second
 
         // Anim flipInX

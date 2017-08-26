@@ -45,6 +45,8 @@ Portfolio = {
       $('body').removeClass('mobile');
     }
 
+    Portfolio.smoothScroll();
+
   },
 
   // PARALLAX WITH CLOUDS
@@ -91,38 +93,35 @@ Portfolio = {
     var waypoints = $('.waypoint');
     waypoints.waypoint(function(direction){
       if (direction === "down") {
-        var matchingLink = $('a[href="#' + this.element.id + '"]');
-        $('.header-nav').find('.header-nav-item').removeClass('is-active');
-        matchingLink.parent('.header-nav-item').addClass('is-active');
+        var matchingLink = $('a[data-href="#' + this.element.id + '"]');
+        $('.header-nav').find('.header-nav-link').removeClass('is-active');
+        matchingLink.addClass('is-active');
+        console.log("down : " + matchingLink);
       }
     }, {offset: '200px'});
 
     waypoints.waypoint(function(direction){
       if (direction === "up") {
-        var matchingLink = $('a[href="#' + this.element.id + '"]');
-        $('.header-nav').find('.header-nav-item').removeClass('is-active');
-        matchingLink.parent('.header-nav-item').addClass('is-active');
+        var matchingLink = $('a[data-href="#' + this.element.id + '"]');
+        $('.header-nav').find('.header-nav-link').removeClass('is-active');
+        matchingLink.addClass('is-active');
+        console.log("up : " + matchingLink);
       }
-    }, {offset: '-500px'});
+    }, {offset: '-200px'});
   },
 
 
   // SMOOTH SCROLL FUNCTION
 
   smoothScroll: function() {
-    $('[data-href').click(function() {
-      var button = $(this);
-      var anchor = button.data('href');
-      Portfolio.scrollTo(anchor);
+    $('[data-href]').click(function() {
+      var button = $(this),
+          offset = 70,
+          anchor = button.data('href');
+      $('html, body').animate({
+        scrollTop: $(anchor).offset().top - (is.desktop ? offset : 0)
+      }, 'slow');
       return false;
-    });
-  },
-
-  scrollTo: function(href) {
-    $('html, body').animate({
-      scrollTop: $(href).offset().top - 70
-    }, 'slow', function(){
-      window.location.hash = href;
     });
   },
 

@@ -1,103 +1,55 @@
 // INTER SECTION BLOCKS
 
-.inter-section {
+%inter-section {
+  position: relative;
   min-height: 100px;
   text-align: center;
-  .page-wrapper-lg {
-    position: relative;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    &:before {
-      @include pseudoElement();
-      top: -1px;
-      left: 40px;
-    }
-    &:after {
-      @include pseudoElement();
-      top: calc(100% - 1px);
-      right: 40px;
-    }
+  &:before,
+  &:after {
+    @include pseudoElement();
   }
 }
-
-// INTER SECTION: ABOUT ME
-
-.inter-section--aboutMe {
-  @extend .inter-section;
-  background: $red;
-  color: $white;
-  .page-wrapper-lg {
-    &:before {
-      @include triangle(bottom, $white);
-    }
-    &:after {
-      @include triangle(bottom, $red);
-    }
-  }
-  .inter-title {
-    font-size: 24px;
-    font-weight: 600;
-    color: $black;
-    text-transform: uppercase;
-  }
-  .inter-subtitle {
-    font-size: 24px;
-    font-weight: 600;
-    color: $white;
-    text-transform: uppercase;
-  }
-  .inter-txt {
-    margin-bottom: 20px;
-  }
-}
-
 
 // INTER SECTION: TAGLINE
 
 .inter-section--tagline {
-  @extend .inter-section;
-  position: relative;
+  @extend %inter-section;
+  padding: 60px 0;
   background: $blueDark;
   color: $blueLight;
-  &:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
+  @include breakpoint($mq-lg) {
+    padding: 80px 0;
+  }
+  @include breakpoint($mq-xxl) {
+    padding: 100px 0;
+  }
+  &:before,
+  &:after {
+    height: 42px;
     left: 0;
     right: 0;
-    height: 42px;
+  }
+  &:before {
     top: 0;
     background: url("../../images/curve-top.svg") center top no-repeat;
     background-size: 104%;
   }
   &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 42px;
     bottom: 0;
     background: url("../../images/curve-bottom.svg") center bottom no-repeat;
     background-size: 104%;
-  }
-  .page-wrapper-lg {
-    &:before {
-      // @include triangle(bottom, $white);
-    }
-    &:after {
-      // @include triangle(bottom, $blueDark);
-    }
-  }
-  .aligned-left {
-    text-align: left;
-    padding-left: 100px;
   }
   .inter-tagline {
     font-size: 20px;
     text-transform: uppercase;
     &:first-child {
       margin-bottom: 10px;
+    }
+  }
+  .inter-tagline-base {
+    width: 100%;
+    @include breakpoint($mq-md) {
+      width: auto;
     }
   }
   .tagline-animated {
