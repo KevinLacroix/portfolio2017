@@ -1,0 +1,35 @@
+// Timeline date
+
+.timeline-date {
+  position: relative;
+  &:after {
+    @include pseudoElement;
+    top: 0;
+    bottom: 0;
+    background: $red;
+    width: 20px;
+    left: 50%;
+    margin-left: -10px;
+  }
+  .timeline-date-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    border: 10px solid $red;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    background: $white;
+  }
+  .timeline-year {
+    @include font(24, 0, $openSansMedium);
+  }
+  .timeline-month {
+    @include font(12, 2, $openSans);
+    letter-spacing: 0;
+  }
+}

@@ -85,7 +85,7 @@
       float: left;
       width: calc(100% - 112px);
       height: 100%;
-      background: $whitish;
+      background: $greyLightest;
     }
     .skill-bar-inner {
       background: $blueLight;
@@ -97,7 +97,7 @@
 }
 
 
-// SKILL BLOCK
+// EDUCATION AND EMPLOYMENT BLOCK
 
 .timeline-section {
   position: relative;
@@ -108,8 +108,49 @@
   .timeline-list {
     position: relative;
     z-index: 1;
+    display: grid;
     .timeline-item {
-      margin-bottom: 10px;
+      @include breakpoint($mq-md) {
+        display: grid;
+        grid-template-columns: 50% 100px 50%;
+        grid-column-gap: 30px;
+        margin-bottom: 10px;
+      }
+      &.timeline-item--first {
+        .timeline-date-inner {
+          @include breakpoint($mq-md) {
+            transform: translateY(50%);
+          }
+        }
+      }
+      &.timeline-item--right {
+        .timeline-date:after {
+          @include breakpoint($mq-md) {
+            left: initial;
+            right: 0;
+            margin-left: 0;
+          }
+        }
+      }
+      &.timeline-item--left {
+        .timeline-date:after {
+          @include breakpoint($mq-md) {
+            left: 0;
+            margin-left: 0;
+          }
+        }
+      }
+      .timeline-date {
+        width: 100px;
+        @include breakpoint($mq-md) {
+          width: auto;
+        }
+      }
+      .timeline-date-inner {
+        @include breakpoint($mq-md) {
+          transform: translateY(-50%);
+        }
+      }
     }
   }
   .timeline-cogs {
@@ -136,28 +177,6 @@
     svg:nth-child(3) {
       margin-top: -26%;
     }
-  }
-}
-
-// ABOUT ME
-
-.about-section {
-  @extend %inter-section;
-  padding: 60px 0;
-  background: $red;
-  color: $white;
-  .section-header--dark { margin-bottom: 40px; }
-  &:before {
-    @include pseudoElement();
-    @include triangle(bottom, $white);
-    top: -1px;
-    left: 40px;
-  }
-  &:after {
-    @include pseudoElement();
-    @include triangle(bottom, $red);
-    top: calc(100% - 1px);
-    right: 40px;
   }
 }
 

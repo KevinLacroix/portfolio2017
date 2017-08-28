@@ -1,0 +1,57 @@
+// Timeline Experience content
+
+.timeline-job {
+  @extend %box-item;
+  position: relative;
+  padding: 40px;
+  background: $whiteDirty;
+  .timeline-company-title {
+    @include font(20, 4, $openSansMedium);
+    text-transform: uppercase;
+    color: $red;
+  }
+  .timeline-company-txt {
+    @include font(20, 4, $openSansMedium);
+  }
+  .timeline-skill-title {
+    @include font(18, 4, $openSans);
+    text-transform: uppercase;
+  }
+  .timeline-skill-list {
+    @include font(16, 4, $openSans);
+  }
+  .timeline-skill-item {
+    position: relative;
+    padding-left: 30px;
+    &:before {
+      @include font(22, 0, $openSansMedium);
+      position: absolute;
+      left: 10px;
+      content: "+";
+    }
+  }
+}
+
+.timeline-job--left {
+  &:after {
+    @extend %box-item;
+    @include triangle(right, $whiteDirty, 14px, 1, true);
+    left: 100%;
+    top: 50%;
+    margin-top: -28px;
+    transform-origin: left top;
+    transform: rotate(45deg);
+  }
+}
+
+.timeline-job--right {
+  &:before {
+    @extend %box-item;
+    @include triangle(left, $whiteDirty, 14px, 1, true);
+    right: 100%;
+    top: 50%;
+    margin-top: -28px;
+    transform-origin: right top;
+    transform: rotate(-45deg);
+  }
+}

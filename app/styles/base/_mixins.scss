@@ -150,35 +150,50 @@
 
 // Triangles
 
-@mixin triangle($direction, $color: currentcolor, $size: 35px, $ratio: 2) {
+@mixin triangle($direction, $color: currentcolor, $size: 35px, $ratio: 2, $boxshadow: false) {
 
   @include pseudoElement();
   width: 0;
   height: 0;
   z-index: 2;
 
-  @if $direction == top {
-    border-bottom: ($size / $ratio) solid $color;
-  }
-  @if $direction == bottom {
-    border-top: ($size / $ratio) solid $color;
-  }
-  @if $direction == right {
-    border-left: ($size / $ratio) solid $color;
-  }
-  @if $direction == left {
-    border-right: ($size / $ratio) solid $color;
+  @if $boxshadow == false {
+    @if $direction == top {
+      border-bottom: ($size / $ratio) solid $color;
+    }
+    @if $direction == bottom {
+      border-top: ($size / $ratio) solid $color;
+    }
+    @if $direction == right {
+      border-left: ($size / $ratio) solid $color;
+    }
+    @if $direction == left {
+      border-right: ($size / $ratio) solid $color;
+    }
+
+    $perpendicular-borders: $size solid transparent;
+
+    @if $direction == top or $direction == bottom {
+      border-left:   $perpendicular-borders;
+      border-right:  $perpendicular-borders;
+    } @else if $direction == right or $direction == left {
+      border-bottom: $perpendicular-borders;
+      border-top:    $perpendicular-borders;
+    }
   }
 
-  $perpendicular-borders: $size solid transparent;
-
-  @if $direction == top or $direction == bottom {
-    border-left:   $perpendicular-borders;
-    border-right:  $perpendicular-borders;
-  } @else if $direction == right or $direction == left {
-    border-bottom: $perpendicular-borders;
-    border-top:    $perpendicular-borders;
+  @else if $boxshadow == true {
+    border: $size solid black;
+    @if $direction == left {
+      border-color: $color transparent transparent $color;
+      box-shadow: -2px -1px 2px 0 rgba(0, 0, 0, 0.1);
+    }
+    @if $direction == right {
+      border-color: $color $color transparent transparent;
+      box-shadow: 2px -1px 2px 0 rgba(0, 0, 0, 0.1);
+    }
   }
+
 }
 
 
@@ -235,14 +250,15 @@
   $font-size: ($sizeValue / 10) + rem;
   $line-height: ceilHundredths( ($sizeValue + $lh) / $sizeValue);
 
-  @if ($fontfamily == $openSansLight) {
-    font: normal 300 $font-size/$line-height $openSans, $sansSerif;
-  }
-  @else if ($fontfamily == $openSansItalic){
+
+  @if ($fontfamily == $openSansItalic){
     font: italic 400 $font-size/$line-height $openSans, $sansSerif;
   }
   @else if ($fontfamily == $openSansMedium){
     font: normal 600 $font-size/$line-height $openSans, $sansSerif;
+  }
+  @else if ($fontfamily == $openSansBold) {
+    font: normal 700 $font-size/$line-height $openSans, $sansSerif;
   }
   @else{
     font: normal 400 $font-size/$line-height $openSans, $sansSerif;

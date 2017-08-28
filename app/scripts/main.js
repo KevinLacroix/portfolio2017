@@ -45,8 +45,6 @@ Portfolio = {
       $('body').removeClass('mobile');
     }
 
-    Portfolio.smoothScroll();
-
   },
 
   // PARALLAX WITH CLOUDS

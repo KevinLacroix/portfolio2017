@@ -12,9 +12,9 @@ $base-letter-spacing: 1px;
 
 $sansSerif          : sans-serif;
 $openSans           : "Open Sans";
-$openSansLight      : "Open Sans Light";
-$openSansMedium     : "Open Sans Medium";
 $openSansItalic     : "Open Sans Italic";
+$openSansMedium     : "Open Sans Medium";
+$openSansBold       : "Open Sans Bold";
 
 // Colors
 
@@ -23,8 +23,9 @@ $blackish           : #222;
 $greyDark           : #333;
 $grey               : #666;
 $greyLight          : #aaa;
+$greyLightest       : #e4e4e4;
 $white              : #fff;
-$whitish            : #e4e4e4;
+$whiteDirty         : #f7f7f7;
 $red                : #f16058;
 $blueLight          : #47aaff;
 $blueDark           : #0148a8;
