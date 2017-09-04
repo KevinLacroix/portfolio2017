@@ -1,37 +1,100 @@
+// TIMELINE ITEM
+
 .timeline-item {
-  &.is-active {
-    .timeline-item-title {
-      background: $blueDark;
-    }
-    .timeline-item-txt {
-      padding: 10px;
-      max-height: none;
-      opacity: 1;
-      transition: max-height 0.8s cubic-bezier(0, 1, 0, 1), padding-top 0.3s ease-in-out, opacity 0.2s ease-in-out;
-    }
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-column-gap: 30px;
+  grid-auto-rows: minmax(100px, auto);
+  @include breakpoint($mq-md) {
+    grid-template-columns: 1fr 100px 1fr;
+    grid-auto-rows: minmax(150px, auto);
   }
-  .timeline-item-title {
+  .timeline-date {
+    grid-column: 1;
     display: flex;
-    position: relative;
-    align-items: center;
-    padding: 10px 50px 10px 20px;
-    min-height: 56px;
-    font-size: 20px;
-    color: $white;
-    background: $blueLight;
-    cursor: pointer;
-    &:after {
-      @include triangle(right, $white, 10px, 1);
-      right: 20px;
-      margin-top: -10px;
-      top: 50%
+    @include breakpoint($mq-md) {
+      grid-column: 2;
+    }
+    .timeline-date-inner {
+      align-self: flex-end;
+      transform: translateY(50%);
     }
   }
-  .timeline-item-txt {
-    padding: 0;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.8s cubic-bezier(0, 1, 0, 1), padding-top 0.3s ease-in-out, opacity 0.2s ease-in-out;
+  .timeline-job {
+    margin: 10px 0;
+    @include breakpoint($mq-md) {
+      margin: 0;
+    }
+  }
+}
+
+.timeline-item.timeline-item--right {
+  .timeline-draw {
+    @include breakpoint($mq-md) {
+      left: initial;
+      right: 0;
+      margin-left: 0;
+    }
+  }
+  .timeline-job {
+    grid-column: 2;
+    @include breakpoint($mq-md) {
+      grid-column: 3;
+    }
+  }
+}
+
+.timeline-item.timeline-item--left {
+  .timeline-draw {
+    @include breakpoint($mq-md) {
+      left: 0;
+      margin-left: 0;
+    }
+  }
+  .timeline-job {
+    grid-column: 2;
+    @include breakpoint($mq-md) {
+      grid-column: 1;
+      order: 1;
+    }
+  }
+  .timeline-date {
+    @include breakpoint($mq-md) {
+      order: 2;
+    }
+  }
+}
+
+.timeline-item.timeline-item--first {
+  .timeline-date {
+    &:before {
+      @include triangle(top, $red, 7.5px, 1);
+      bottom: 100%;
+      left: 50%;
+      margin-left: -7.5px;
+      @include breakpoint($mq-md) {
+        left: 0;
+        margin-left: 0;
+      }
+    }
+  }
+  .timeline-date-inner {
+    @include breakpoint($mq-md) {
+      transform: translateY(50%);
+    }
+  }
+  .timeline-draw {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.timeline-item.timeline-item--last {
+  .timeline-draw {
+    height: calc(100% + 60px);
+    &:after {
+      display: none;
+    }
   }
 }

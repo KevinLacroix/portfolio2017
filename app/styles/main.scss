@@ -61,37 +61,18 @@
   padding: 60px 0;
   background: $blueLight;
   .section-header--dark { margin-bottom: 40px; }
-  .skill-bar-wrapper {
-    height: 40px;
-    line-height: 40px;
-    margin-bottom: 2px;
-    .skill-btn {
-      @extend %btn;
-      float: left;
-      width: 110px;
-      height: 100%;
-      margin-right: 2px;
-      text-align: center;
-      color: $white;
-      background: $blueDark;
-      &.is-active {
-        background: $red;
-      }
-      &:hover {
-        background: $red;
-      }
+  .skill-list {
+    @include breakpoint($mq-lg) {
+      display: grid;
+      grid-template: repeat(6, 40px) / 1fr 1fr;
+      grid-auto-flow: column;
+      grid-gap: 10px 60px;
     }
-    .skill-bar {
-      float: left;
-      width: calc(100% - 112px);
-      height: 100%;
-      background: $greyLightest;
-    }
-    .skill-bar-inner {
-      background: $blueLight;
-      height: 100%;
-      width: 0;
-      transition: width 1.5s ease-in-out;
+  }
+  .skill-item {
+    margin-bottom: 10px;
+    @include breakpoint($mq-lg) {
+      margin-bottom: 0;
     }
   }
 }
@@ -104,54 +85,14 @@
   overflow: hidden;
   padding: 60px 0;
   background: $white;
-  .section-header--white { margin-bottom: 40px; }
+  .section-header--white {
+    position: relative;
+    z-index: 1;            // Above cogs
+    margin-bottom: 40px;
+  }
   .timeline-list {
     position: relative;
     z-index: 1;
-    display: grid;
-    .timeline-item {
-      @include breakpoint($mq-md) {
-        display: grid;
-        grid-template-columns: 50% 100px 50%;
-        grid-column-gap: 30px;
-        margin-bottom: 10px;
-      }
-      &.timeline-item--first {
-        .timeline-date-inner {
-          @include breakpoint($mq-md) {
-            transform: translateY(50%);
-          }
-        }
-      }
-      &.timeline-item--right {
-        .timeline-date:after {
-          @include breakpoint($mq-md) {
-            left: initial;
-            right: 0;
-            margin-left: 0;
-          }
-        }
-      }
-      &.timeline-item--left {
-        .timeline-date:after {
-          @include breakpoint($mq-md) {
-            left: 0;
-            margin-left: 0;
-          }
-        }
-      }
-      .timeline-date {
-        width: 100px;
-        @include breakpoint($mq-md) {
-          width: auto;
-        }
-      }
-      .timeline-date-inner {
-        @include breakpoint($mq-md) {
-          transform: translateY(-50%);
-        }
-      }
-    }
   }
   .timeline-cogs {
     position: absolute;
@@ -194,17 +135,17 @@
   background: url("../../images/bg-footer.png") center center;
   .section-header--dark { margin-bottom: 40px; }
   .form-row {
-    @include clearfix();
     margin-bottom: 20px;
+  }
+  .form-half {
+    display: flex;
+    justify-content: space-between;
+    input {
+      width: calc(50% - 10px);
+    }
   }
   .btn-submit {
     width: 100%;
-  }
-  input:focus,
-  textarea:focus {
-    background: #eee;
-    outline: 0;
-    border: 1px solid $red;
   }
 }
 

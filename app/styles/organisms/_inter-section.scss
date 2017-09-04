@@ -66,13 +66,13 @@
   color: $white;
   .section-header--dark { margin-bottom: 40px; }
   &:before {
-    @include pseudoElement();
-    @include triangle(bottom, $white);
-    top: -1px;
-    left: 40px;
+    @include breakpoint($mq-md) {
+      @include triangle(bottom, $white);
+      top: -1px;
+      left: 40px;
+    }
   }
   &:after {
-    @include pseudoElement();
     @include triangle(bottom, $red);
     top: calc(100% - 1px);
     right: 40px;

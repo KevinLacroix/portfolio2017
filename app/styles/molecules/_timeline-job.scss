@@ -1,20 +1,26 @@
-// Timeline Experience content
+// TIMELINE EXPERIENCE CONTENT
 
 .timeline-job {
   @extend %box-item;
   position: relative;
-  padding: 40px;
+  padding: 30px;
   background: $whiteDirty;
+  @include breakpoint($mq-md) {
+    padding: 40px;
+  }
   .timeline-company-title {
     @include font(20, 4, $openSansMedium);
+    margin-bottom: 6px;
     text-transform: uppercase;
     color: $red;
   }
   .timeline-company-txt {
     @include font(20, 4, $openSansMedium);
+    margin-bottom: 6px;
   }
   .timeline-skill-title {
     @include font(18, 4, $openSans);
+    margin-bottom: 6px;
     text-transform: uppercase;
   }
   .timeline-skill-list {
@@ -26,21 +32,35 @@
     &:before {
       @include font(22, 0, $openSansMedium);
       position: absolute;
-      left: 10px;
+      left: 6px;
       content: "+";
     }
   }
 }
 
 .timeline-job--left {
+  &:before {
+    @extend %box-item;
+    @include triangle(left, $whiteDirty, 14px, 1, true);
+    right: 100%;
+    top: 50%;
+    margin-top: -20px; // After rotation the block is 40px x 40px
+    transform-origin: right top;
+    transform: rotate(-45deg);
+    @include breakpoint($mq-md) {
+      display: none;
+    }
+  }
   &:after {
     @extend %box-item;
-    @include triangle(right, $whiteDirty, 14px, 1, true);
-    left: 100%;
-    top: 50%;
-    margin-top: -28px;
-    transform-origin: left top;
-    transform: rotate(45deg);
+    @include breakpoint($mq-md) {
+      @include triangle(right, $whiteDirty, 14px, 1, true);
+      left: 100%;
+      top: 50%;
+      margin-top: -20px; // After rotation the block is 40px x 40px
+      transform-origin: left top;
+      transform: rotate(45deg);
+    }
   }
 }
 
@@ -50,7 +70,7 @@
     @include triangle(left, $whiteDirty, 14px, 1, true);
     right: 100%;
     top: 50%;
-    margin-top: -28px;
+    margin-top: -20px; // After rotation the block is 40px x 40px
     transform-origin: right top;
     transform: rotate(-45deg);
   }

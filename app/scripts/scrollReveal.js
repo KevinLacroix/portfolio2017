@@ -106,10 +106,13 @@ $(function() {
         // SKILLBAR WIDTH ON SKILL PAGE
 
         else if ($this.hasClass('skill-bar-inner')) {
-          //setTimeout(function() {
-            $this.css('width', $this.data('percent'));
-            $this.addClass('was-animated');
-          // }, 50);
+          $this.css('width', $this.data('percent'));
+          $this.addClass('was-animated');
+        }
+
+        else if ($this.hasClass('quality-bar-inner')) {
+          $this.css('width', $this.data('percent'));
+          $this.addClass('was-animated');
         }
 
         // Default

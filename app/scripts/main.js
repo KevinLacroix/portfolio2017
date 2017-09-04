@@ -145,9 +145,35 @@ $(document).ready(function() {
   Portfolio.smoothScroll();
   Portfolio.stickyNav();
 
-  // Gears FAQ
+  // SPINNING GEARS
+
   if ( $('.timeline-cogs').length ) {
     Portfolio.cogRotate();
+  }
+
+  // TYPING WORDS
+
+  if ( $('.tagline-animated').length ) {
+    $('.typed-insertion1').typed({
+      stringsElement: $('.list-keywords1'),
+      typeSpeed: 50,
+      startDelay: 1000,
+      loop: true,
+      loopCount: 3,
+      backSpeed: 30,
+      shuffle: false,
+      backDelay: 3000
+    });
+    $('.typed-insertion2').typed({
+      stringsElement: $('.list-keywords2'),
+      typeSpeed: 50,
+      startDelay: 1000,
+      loop: true,
+      loopCount: 3,
+      backSpeed: 30,
+      shuffle: false,
+      backDelay: 3000
+    });
   }
 
   if ( is.desktop ) {
@@ -170,32 +196,6 @@ $(document).ready(function() {
 
     if ($('.portfolio-section').length) {
       $('.project-item').hoverdir({hoverElem: '.project-caption'});
-    }
-
-    if ( $('.tagline-animated').length ) {
-
-      $('.typed-insertion1').typed({
-        stringsElement: $('.list-keywords1'),
-        typeSpeed: 50,
-        startDelay: 1000,
-        loop: true,
-        loopCount: 3,
-        backSpeed: 30,
-        shuffle: false,
-        backDelay: 3000
-      });
-
-      $('.typed-insertion2').typed({
-        stringsElement: $('.list-keywords2'),
-        typeSpeed: 50,
-        startDelay: 1000,
-        loop: true,
-        loopCount: 3,
-        backSpeed: 30,
-        shuffle: false,
-        backDelay: 3000
-      });
-
     }
 
   }

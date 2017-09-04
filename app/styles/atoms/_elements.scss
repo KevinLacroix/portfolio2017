@@ -18,13 +18,17 @@ a {
   font-family: $openSans, $sansSerif; // Does not inherit
 }
 
+// Buttons
+
 %btn {
+  @include font(16, 6, $openSansMedium);
   position: relative;
   padding: 0;
-  font-size: 16px;
   border-radius: 2px;
+  letter-spacing: $base-letter-spacing;
   appearance: none;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 .btn-primary--white {
@@ -37,35 +41,29 @@ a {
   @extend %btn;
   background: $red;
   color: $white;
-  text-transform: uppercase;
+  line-height: 44px;
 }
 
 // Form elements
-
-input, textarea {
-  &:focus {
-    outline: 1px solid $red;
-  }
-}
 
 input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="search"] {
+  @include font-size(14, 6);
   display: block;
   height: 38px;
   padding-left: 10px;
   width: 100%;
   border: 1px solid $greyLightest;
   border-radius: 2px;
-  font-size: 14px;
-  line-height: 1.4;
   background: $white;
   appearance: none;
   color: $blackish;
 }
 
 textarea {
+  @include font-size(14, 6);
   display: block;
   min-height: 250px;
   padding-left: 10px;
@@ -73,16 +71,19 @@ textarea {
   width: 100%;
   border: 1px solid $greyLightest;
   border-radius: 2px;
-  font-size: 14px;
-  line-height: 1.4;
   background: $white;
   appearance: none;
   color: $blackish;
 }
 
-/* ------------
-   BOXES STYLES
-   ------------ */
+input, textarea {
+  &:focus {
+    outline: 1px solid $red;
+    border: 1px solid $red;
+  }
+}
+
+// BOXES STYLES
 
 %box-item {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);

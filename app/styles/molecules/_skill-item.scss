@@ -1,0 +1,31 @@
+// SKILL ITEM
+
+.skill-item {
+  display: flex;
+  .skill-title {
+    @include font(13, 6, $openSansMedium);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    flex: 120px 0;
+    margin-right: 4px;
+    border-radius: 3px;
+    text-align: center;
+    color: $white;
+    text-transform: uppercase;
+    background: $darknight;
+  }
+  .skill-bar {
+    flex: auto 1;
+    border-radius: 3px 20px 20px 3px;
+    background: $blueMiddle;
+  }
+  .skill-bar-inner {
+    height: 40px;
+    width: 0;
+    border-radius: 3px 0 0 3px;
+    background: $blueDark;
+    transition: width 1.5s ease-in-out;
+  }
+}

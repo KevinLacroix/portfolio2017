@@ -1,4 +1,4 @@
-// Animation
+// ANIMATION
 
 @keyframes animStar {
   from { transform: translateY(0px) }
@@ -44,7 +44,6 @@
 
 .anim-3d {
   padding: 0;
-  line-height: 44px;
   perspective: 5000px;
   .anim-3d-inner {
     position: relative;
@@ -229,7 +228,6 @@
   98% { transform: translateX(3px); }
   100% { transform: translateX(0); }
 }
-
 
 // Anim for typing cursor
 
