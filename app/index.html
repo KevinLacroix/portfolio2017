@@ -22,10 +22,6 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="/bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
-
     <!--[if IE8]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -716,7 +712,7 @@
                     You want to know more detail about my skills, past experiences or my hobbies ?<br>
                     You want to talk to a reference that can tell you more about me ?</p>
                 </div>
-                <button class="btn-primary--white">Download my CV</button>
+                <a href="download/cv-nz.pdf" target="_blank" class="btn-primary--white js-download" download="Kevin-Lacroix-Frontend-CV.pdf">Download my CV</a>
             </div>
         </section>
 
@@ -725,6 +721,20 @@
                 <h2 class="section-title">They trusted me</h2>
                 <p class="section-intro">I worked the last two years within an IT services company where I was put on different assignments working with clients from different fields. I had the opportunity to work on heavy traffic websites for a media group and a pharmaceutical company. I also worked for two notorious companies in the luxury sector where pixel-perfect layouts and great performance are a requirement. Before that I had the opportunity to work in web agencies, in Canada, on smaller but not less diverse projects.</p>
             </header>
+            <ul class="reference-list page-wrapper-lg">
+                <li class="reference-item"><img src="images/logos/logo-acolyte.svg" alt="Acolyte Communication"></li>
+                <li class="reference-item"><img src="images/logos/logo-chanel.svg" alt="Chanel"></li>
+                <li class="reference-item"><img src="images/logos/logo-chaumet.svg" alt="Chaumet"></li>
+                <li class="reference-item"><img src="images/logos/logo-evades.svg" alt="Les Evadés"></li>
+                <li class="reference-item"><img src="images/logos/logo-ftvsport.svg" alt="FranceTV Sport"></li>
+                <li class="reference-item"><img src="images/logos/logo-fullsix.jpg" alt="Fullsix"></li>
+                <li class="reference-item"><img src="images/logos/logo-havas.svg" alt="Havas"></li>
+                <li class="reference-item"><img src="images/logos/logo-hoffman.svg" alt="Hoffman"></li>
+                <li class="reference-item"><img src="images/logos/logo-neolynk.svg" alt="Neolynk"></li>
+                <li class="reference-item"><img src="images/logos/logo-traceone.jpeg" alt="Traceone"></li>
+                <li class="reference-item"><img src="images/logos/logo-un.png" alt="Ultra Noir"></li>
+                <li class="reference-item"><img src="images/logos/logo-univadis.svg" alt="Univadis"></li>
+            </ul>
         </section>
 
         <!-- Modals -->
@@ -840,7 +850,7 @@
                     </div>
                     <div class="form-row cl-effect-2">
                         <button class="btn-submit anim-3d">
-                            <span class="anim-3d-inner" data-hover="Envoyer">Envoyer</span>
+                            <span class="anim-3d-inner">Send</span>
                         </button>
                     </div>
                 </form>
@@ -872,7 +882,6 @@
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/jquery.easing/js/jquery.easing.js"></script>
-    <script src="/bower_components/modernizr/modernizr.js"></script>
     <script src="/bower_components/classie/classie.js"></script>
     <script src="/bower_components/tweenlite/TweenLite.min.js"></script>
     <script src="/bower_components/raf.js/raf.js"></script>
@@ -887,6 +896,7 @@
 
     <!-- Additional Libs / Plugins not on npm or bower -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/easing/EasePack.min.js"></script>
+    <script src="../scripts/modernizr-a-download.js"></script>
     <script src="../scripts/scrollreveal.js"></script>
     <script src="../scripts/AnimatedHeaderBackgrounds.js"></script>
     <!-- End Additional Libs / Plugins -->

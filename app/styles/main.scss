@@ -126,6 +126,10 @@
 .references-section {
   padding: 60px 0;
   background: $white;
+  .reference-list {
+    display: grid;
+    grid-template: repeat(4, 100px) / 1fr 1fr 1fr 1fr;
+  }
 }
 
 // FOOTER

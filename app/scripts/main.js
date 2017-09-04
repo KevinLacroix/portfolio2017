@@ -47,6 +47,18 @@ Portfolio = {
 
   },
 
+  // DOWNLOAD CV FOR IE
+
+  downloadCV: function() {
+    if ( ! Modernizr.adownload ) {
+      var $download = $('.js-download').attr('download');
+      if (typeof $download !== typeof undefined && $download !== false) {
+        var $el = $('<div>').addClass('download-instruction').text('Right-click and select "Download Linked File"');
+        $el.insertAfter('.js-download');
+      }
+    }
+  },
+
   // PARALLAX WITH CLOUDS
 
   moveClouds: function() {
@@ -94,7 +106,6 @@ Portfolio = {
         var matchingLink = $('a[data-href="#' + this.element.id + '"]');
         $('.header-nav').find('.header-nav-link').removeClass('is-active');
         matchingLink.addClass('is-active');
-        console.log("down : " + matchingLink);
       }
     }, {offset: '200px'});
 
@@ -103,7 +114,6 @@ Portfolio = {
         var matchingLink = $('a[data-href="#' + this.element.id + '"]');
         $('.header-nav').find('.header-nav-link').removeClass('is-active');
         matchingLink.addClass('is-active');
-        console.log("up : " + matchingLink);
       }
     }, {offset: '-200px'});
   },
@@ -144,6 +154,7 @@ $(document).ready(function() {
   Portfolio.bindSticky();
   Portfolio.smoothScroll();
   Portfolio.stickyNav();
+  Portfolio.downloadCV();
 
   // SPINNING GEARS
 
