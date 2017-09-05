@@ -131,6 +131,16 @@ Portfolio = {
       }, 'slow');
       return false;
     });
+    $('[data-href-bis]').click(function() {
+      console.log('toto');
+      var button = $(this),
+          offset = is.desktop ? 70 : 60,
+          anchor = button.data('href-bis');
+      $('html, body').animate({
+        scrollTop: $(anchor).offset().top - offset
+      }, 'slow');
+      return false;
+    });
   },
 
   cogRotate: function() {

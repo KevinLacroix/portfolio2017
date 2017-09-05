@@ -8,29 +8,44 @@
     display: flex;
     flex-direction: column;
     border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    border: 10px solid $red;
+    height: 70px;
+    width: 70px;
+    border: 8px solid $red;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
     background: $white;
+    @include breakpoint($mq-sm) {
+      height: 100px;
+      width: 100px;
+      border: 10px solid $red;
+    }
   }
   .timeline-year {
-    @include font(24, 0, $openSansMedium);
+    @include font(18, 0, $openSansMedium);
+    @include breakpoint($mq-sm) {
+      @include font(24, 0, $openSansMedium);
+    }
   }
   .timeline-month {
-    @include font(12, 2, $openSans);
+    @include font(8, 2, $openSans);
     letter-spacing: 0;
+    @include breakpoint($mq-sm) {
+      @include font(12, 2, $openSans);
+    }
   }
   .timeline-draw {
     position: absolute;
     top: 0;
     bottom: 0;
-    background: $red;
-    width: 16px;
     left: 50%;
-    margin-left: -8px;
+    width: 10px;
+    margin-left: -5px;
+    background: $red;
+    @include breakpoint($mq-sm) {
+      width: 16px;
+      margin-left: -8px;
+    }
     &:after {
       @include pseudoElement();
       top: 50%;

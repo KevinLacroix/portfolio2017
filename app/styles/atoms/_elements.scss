@@ -90,3 +90,20 @@ input, textarea {
   border-radius: 3px;
 }
 
+// OLD BROWSERS CSS GRID
+
+.legacy-css-grid-txt {
+  @include font(16, 10, $openSansItalic);
+  padding: 12px;
+  border-radius: 3px;
+  text-align: center;
+  color: $white;
+  background: $grey;
+}
+
+@supports(display:grid) {
+  .legacy-css-grid {
+    display: none;
+  }
+}
+

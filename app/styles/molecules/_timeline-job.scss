@@ -3,37 +3,56 @@
 .timeline-job {
   @extend %box-item;
   position: relative;
-  padding: 30px;
+  padding: 20px;
   background: $whiteDirty;
+  @include breakpoint($mq-sm) {
+    padding: 30px;
+  }
   @include breakpoint($mq-md) {
     padding: 40px;
   }
   .timeline-company-title {
-    @include font(20, 4, $openSansMedium);
+    @include font(18, 4, $openSansMedium);
     margin-bottom: 6px;
     text-transform: uppercase;
     color: $red;
+    @include breakpoint($mq-sm) {
+      @include font(20, 4, $openSansMedium);
+    }
   }
   .timeline-company-txt {
-    @include font(20, 4, $openSansMedium);
+    @include font(18, 4, $openSansMedium);
     margin-bottom: 6px;
+    @include breakpoint($mq-sm) {
+      @include font(20, 4, $openSansMedium);
+    }
   }
   .timeline-skill-title {
-    @include font(18, 4, $openSans);
+    @include font(16, 4, $openSans);
     margin-bottom: 6px;
     text-transform: uppercase;
+    @include breakpoint($mq-sm) {
+      @include font(18, 4, $openSans);
+    }
   }
   .timeline-skill-list {
-    @include font(16, 4, $openSans);
+    @include font(14, 4, $openSans);
+    @include breakpoint($mq-sm) {
+      @include font(16, 4, $openSans);
+    }
   }
   .timeline-skill-item {
     position: relative;
     padding-left: 30px;
+    margin-bottom: 4px;
     &:before {
-      @include font(22, 0, $openSansMedium);
+      @include font(18, 0, $openSansMedium);
       position: absolute;
       left: 6px;
       content: "+";
+      @include breakpoint($mq-sm) {
+        @include font(22, 0, $openSansMedium);
+      }
     }
   }
 }
