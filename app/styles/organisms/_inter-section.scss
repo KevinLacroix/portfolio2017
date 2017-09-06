@@ -39,14 +39,20 @@
     background: url("../../images/curve-blue-light.svg") center bottom no-repeat;
     background-size: 104%;
   }
-  .inter-tagline {
-    font-size: 20px;
+  .tagline-item {
+    @include font(20, 6, $openSansMedium);
     text-transform: uppercase;
+    @include breakpoint($mq-lg) {
+      @include font-size(24, 6);
+    }
+    @include breakpoint($mq-xl) {
+      @include font-size(28, 6);
+    }
     &:first-child {
       margin-bottom: 10px;
     }
   }
-  .inter-tagline-base {
+  .tagline-base {
     width: 100%;
     @include breakpoint($mq-md) {
       width: auto;

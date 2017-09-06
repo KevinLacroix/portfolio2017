@@ -50,7 +50,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="search"] {
-  @include font-size(14, 6);
+  @include font(14, 6, $openSans);
   display: block;
   height: 38px;
   padding-left: 10px;
@@ -63,7 +63,7 @@ input[type="search"] {
 }
 
 textarea {
-  @include font-size(14, 6);
+  @include font(14, 6, $openSans);
   display: block;
   min-height: 250px;
   padding-left: 10px;

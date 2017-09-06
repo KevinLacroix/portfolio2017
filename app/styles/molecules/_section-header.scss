@@ -4,13 +4,14 @@
   @extend %wrapper-md;
   text-align: center;
   .section-title {
+    @include font(24, 6, $openSans);
     position: relative;
     padding-bottom: 30px;
     margin-bottom: 22px;
     font-size: 24px;
     text-transform: uppercase;
-    @include breakpoint($mq-lg) {
-      font-size: 30px;
+    @include breakpoint($mq-md) {
+      @include font-size(30, 6);
     }
     &:after {
       @include pseudoElement();
@@ -20,9 +21,14 @@
     }
   }
   .section-intro {
-    @extend %wrapper-md;
-    @include font(16, 6, $openSans);
+    @include font(14, 6, $openSans);
     text-align: center;
+    @include breakpoint($mq-sm) {
+      padding: 0 60px;
+    }
+    @include breakpoint($mq-md) {
+      @include font-size(16, 6);
+    }
   }
 }
 

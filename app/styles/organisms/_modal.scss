@@ -2,36 +2,49 @@
 
 .modal-block {
   color: $white;
+  background: rgba($red, 0.95);
   .modal-header {
     height: 80px;
     background: $blackish;
   }
-  .page-wrapper-md {
+  .modal-header-inner {
+    @extend %wrapper-md;
     position: relative;
-    padding-top: 20px;
-    height: 100%;
+    display: flex;
+    height: inherit;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .modal-img {
+    margin-bottom: 20px;
   }
   .modal-title {
-    font-size: 32px;
-    line-height: 1.2;
+    @include font(32, 6, $openSans);
     color: $grey;
     text-transform: uppercase;
   }
   .modal-subtitle {
+    @include font(18, 6, $openSans);
     margin-bottom: 15px;
-    font-size: 18px;
     text-transform: uppercase;
   }
+  .modal-list,
   .modal-txt {
+    @include font(16, 6, $openSans);
     margin-bottom: 20px;
+  }
+  .modal-item {
+    padding-left: 24px;
+    position: relative;
+    &:before {
+      content: "+";
+      position: absolute;
+      left: 6px;
+      margin-top: -1px;
+    }
   }
   .modal-btn-close {
     @include sprite("ico-close");
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    width: 40px;
-    height: 40px;
     cursor: pointer;
     transition: transform 0.33s ease-in-out;
     &:hover {
@@ -39,6 +52,11 @@
     }
   }
   .modal-content {
-    padding-top: 80px;
+    @extend %wrapper-md;
+    padding-top: 60px;
+    padding-bottom: 10px;
+    @include breakpoint($mq-md) {
+      padding-top: 80px;
+    }
   }
 }

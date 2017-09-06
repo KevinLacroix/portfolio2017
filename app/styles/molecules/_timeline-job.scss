@@ -17,14 +17,14 @@
     text-transform: uppercase;
     color: $red;
     @include breakpoint($mq-sm) {
-      @include font(20, 4, $openSansMedium);
+      @include font-size(20, 4);
     }
   }
   .timeline-company-txt {
     @include font(18, 4, $openSansMedium);
     margin-bottom: 6px;
     @include breakpoint($mq-sm) {
-      @include font(20, 4, $openSansMedium);
+      @include font-size(20, 4);
     }
   }
   .timeline-skill-title {
@@ -32,13 +32,13 @@
     margin-bottom: 6px;
     text-transform: uppercase;
     @include breakpoint($mq-sm) {
-      @include font(18, 4, $openSans);
+      @include font-size(18, 4);
     }
   }
   .timeline-skill-list {
     @include font(14, 4, $openSans);
     @include breakpoint($mq-sm) {
-      @include font(16, 4, $openSans);
+      @include font-size(16, 4);
     }
   }
   .timeline-skill-item {
@@ -47,11 +47,13 @@
     margin-bottom: 4px;
     &:before {
       @include font(18, 0, $openSansMedium);
+      content: "+";
       position: absolute;
       left: 6px;
-      content: "+";
+      margin-top: -1px;
       @include breakpoint($mq-sm) {
-        @include font(22, 0, $openSansMedium);
+        @include font-size(22, 0);
+        margin-top: -2px;
       }
     }
   }

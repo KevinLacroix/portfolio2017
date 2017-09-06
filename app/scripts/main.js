@@ -132,7 +132,6 @@ Portfolio = {
       return false;
     });
     $('[data-href-bis]').click(function() {
-      console.log('toto');
       var button = $(this),
           offset = is.desktop ? 70 : 60,
           anchor = button.data('href-bis');
