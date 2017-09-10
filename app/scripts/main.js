@@ -62,7 +62,7 @@ Portfolio = {
   // PARALLAX WITH CLOUDS
 
   moveClouds: function() {
-    var $bigHeader = $('#js-big-header');
+    var $bigHeader = $('#js-header');
     var movementStrength2 = 4;
     var movementStrength3 = 6;
     var height2 = movementStrength2 / $(window).height();
@@ -76,8 +76,8 @@ Portfolio = {
       var newvalueX3 = 50 - (width3 * pageX);
       var newvalueY2 = 100 - (height2 * pageY);
       var newvalueY3 = 100 - (height3 * pageY);
-      $('.header-big-bg2').css('background-position', newvalueX2+'% '+newvalueY2+'%');
-      $('.header-big-bg3').css('background-position', newvalueX3+'% '+newvalueY3+'%');
+      $('.header-bg2').css('background-position', newvalueX2+'% '+newvalueY2+'%');
+      $('.header-bg3').css('background-position', newvalueX3+'% '+newvalueY3+'%');
     });
   },
 
@@ -163,7 +163,12 @@ $(document).ready(function() {
   Portfolio.bindSticky();
   Portfolio.smoothScroll();
   Portfolio.stickyNav();
-  Portfolio.downloadCV();
+
+  // DOWNLOAD CV
+
+  if ( $('.js-download').length ) {
+    Portfolio.downloadCV();
+  }
 
   // SPINNING GEARS
 
@@ -202,13 +207,13 @@ $(document).ready(function() {
 
     // ANIMATED HEADER BACKGROUNDS
 
-    if ($('#js-big-header').length) {
+    if ($('#js-header').length) {
       animatedHeaderBackgrounds();
     }
 
     // MOVE CLOUDS
 
-    if ($('#js-big-header').length) {
+    if ($('#js-header').length) {
       Portfolio.moveClouds();
     }
 
@@ -223,6 +228,7 @@ $(document).ready(function() {
   // Modal
 
   if ( $('.project-link').length ) {
+
     $('#trigger-modal1').animatedModal({
       modalTarget:'animatedModal1',
       animatedIn:'zoomIn',
@@ -250,6 +256,91 @@ $(document).ready(function() {
       animatedOut:'bounceOut',
       color:'rgba(241,96,88,0.96)'
     });
+
+    $('#trigger-modal5').animatedModal({
+      modalTarget:'animatedModal5',
+      animatedIn:'zoomIn',
+      animatedOut:'bounceOut',
+      color:'rgba(241,96,88,0.96)'
+    });
+
+    $('#trigger-modal6').animatedModal({
+      modalTarget:'animatedModal6',
+      animatedIn:'zoomIn',
+      animatedOut:'bounceOut',
+      color:'rgba(241,96,88,0.96)'
+    });
+
+    $('#trigger-modal7').animatedModal({
+      modalTarget:'animatedModal7',
+      animatedIn:'lightSpeedIn',
+      animatedOut:'bounceOutDown',
+      color:'rgba(241,96,88,0.96)'
+    });
+
+    $('#trigger-modal8').animatedModal({
+      modalTarget:'animatedModal8',
+      animatedIn:'bounceIn',
+      animatedOut:'bounceOut',
+      color:'rgba(241,96,88,0.96)'
+    });
+
+    $('#trigger-modal9').animatedModal({
+      modalTarget:'animatedModal9',
+      animatedIn:'zoomIn',
+      animatedOut:'bounceOut',
+      color:'rgba(241,96,88,0.96)'
+    });
+
+    $('#trigger-modal10').animatedModal({
+      modalTarget:'animatedModal10',
+      animatedIn:'zoomIn',
+      animatedOut:'bounceOut',
+      color:'rgba(241,96,88,0.96)'
+    });
+
+    $('#trigger-modal11').animatedModal({
+      modalTarget:'animatedModal11',
+      animatedIn:'lightSpeedIn',
+      animatedOut:'bounceOutDown',
+      color:'rgba(241,96,88,0.96)'
+    });
+
+    $('#trigger-modal12').animatedModal({
+      modalTarget:'animatedModal12',
+      animatedIn:'bounceIn',
+      animatedOut:'bounceOut',
+      color:'rgba(241,96,88,0.96)'
+    });
+
+    $('#trigger-modal13').animatedModal({
+      modalTarget:'animatedModal13',
+      animatedIn:'zoomIn',
+      animatedOut:'bounceOut',
+      color:'rgba(241,96,88,0.96)'
+    });
+
+    $('#trigger-modal14').animatedModal({
+      modalTarget:'animatedModal14',
+      animatedIn:'zoomIn',
+      animatedOut:'bounceOut',
+      color:'rgba(241,96,88,0.96)'
+    });
+
+    $('#trigger-modal15').animatedModal({
+      modalTarget:'animatedModal15',
+      animatedIn:'lightSpeedIn',
+      animatedOut:'bounceOutDown',
+      color:'rgba(241,96,88,0.96)'
+    });
+
+    $('#trigger-modal16').animatedModal({
+      modalTarget:'animatedModal16',
+      animatedIn:'bounceIn',
+      animatedOut:'bounceOut',
+      color:'rgba(241,96,88,0.96)'
+    });
+
   }
 
 });

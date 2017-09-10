@@ -12,7 +12,7 @@ function animatedHeaderBackgrounds() {
         height = window.innerHeight;
         target = {x: width/2, y: height/2};
 
-        largeHeader = document.getElementById('js-big-header');
+        largeHeader = document.getElementById('js-header');
         // largeHeader.style.height = height+'px';
 
         canvas = document.getElementById('js-canvas');

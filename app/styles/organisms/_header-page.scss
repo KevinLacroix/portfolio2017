@@ -1,12 +1,12 @@
-// HEADER HOME
+// HEADER
 
-.page-header-big {
+.page-header {
   position: relative;
   overflow: hidden;
   height: 100vh;
   background: linear-gradient(180deg, #0144a4, #0272d3);
 }
-.header-big-bg1 {
+.header-bg1 {
   position: absolute;
   z-index: 5;
   top: 0;
@@ -16,7 +16,7 @@
   background: url("../images/bg-clouds-1.svg") 50% 101% no-repeat;
   background-size: 110%;
 }
-.header-big-bg2 {
+.header-bg2 {
   position: absolute;
   z-index: 4;
   top: 0;
@@ -27,7 +27,7 @@
   background-size: 110%;
   transition: background-position 0.05s linear;
 }
-.header-big-bg3 {
+.header-bg3 {
   position: absolute;
   z-index: 3;
   top: 0;
@@ -38,7 +38,7 @@
   background-size: 110%;
   transition: background-position 0.05s linear;
 }
-.header-big-bg4 {
+.header-bg4 {
   position: absolute;
   z-index: 2;
   top: 0;
@@ -48,7 +48,7 @@
   background: url("../../images/bg-aukland-xl.svg") center 96% no-repeat;
   background-size: 100%;
 }
-.header-big-canvas {
+.header-canvas {
   position: absolute;
   z-index: 1;
   top: 0;
@@ -61,7 +61,7 @@
 $shadowsSmall: multipleBoxShadow(400);
 $shadowsMedium: multipleBoxShadow(100);
 
-.header-big-stars-small {
+.header-stars-small {
   width: 1px;
   height: 1px;
   background: transparent;
@@ -79,7 +79,7 @@ $shadowsMedium: multipleBoxShadow(100);
   }
 }
 
-.header-big-stars-big {
+.header-stars-big {
   width: 2px;
   height: 2px;
   background: transparent;
@@ -97,9 +97,9 @@ $shadowsMedium: multipleBoxShadow(100);
   }
 }
 
-// Header Home Content
+// Header Content
 
-.header-big-content {
+.header-content {
   position: relative;
   z-index: 6;
   display: flex;
@@ -114,7 +114,7 @@ $shadowsMedium: multipleBoxShadow(100);
   @include breakpoint($mq-xxl) {
     padding-bottom: 100px;
   }
-  .header-big-img {
+  .header-img {
     width: 150px;
     margin-bottom: 22px;
   }

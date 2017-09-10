@@ -103,15 +103,22 @@ $(function() {
           }, 1200);
         }
 
-        // SKILLBAR WIDTH ON SKILL PAGE
+        // SKILLBAR WIDTH & QUALITY PROGRESS ON SKILL SECTION
 
         else if ($this.hasClass('skill-bar-inner')) {
           $this.css('width', $this.data('percent'));
           $this.addClass('was-animated');
         }
 
-        else if ($this.hasClass('quality-bar-inner')) {
-          $this.css('width', $this.data('percent'));
+        else if ($this.hasClass('quality-item')) {
+          var $circle = $this.find('.progress-circle--value'),
+              progressValue = $circle.data('percent'),
+              radius = $circle.attr('r'),
+              circumference = 2 * Math.PI * radius,
+              strokeDashoffset = circumference * (1 - progressValue / 100);
+
+          $circle.css({'stroke-dasharray' : circumference, 'stroke-dashoffset' : circumference})
+          $circle.animate({'stroke-dashoffset' : strokeDashoffset}, 1500, "linear");
           $this.addClass('was-animated');
         }
 

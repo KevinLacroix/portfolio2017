@@ -21,13 +21,9 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-
-    <!--[if IE8]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 </head>
 
-<body class="home-page">
+<body>
     <!--[if lt IE 10]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -68,9 +64,7 @@
     <main class="page-main">
         <div class="content"> <!-- Class needed by offcanvasmenueffects -->
 
-        <!-- Start dynamic content for home page -->
-
-        <header class="page-header-big waypoint" id="js-big-header">
+        <header class="page-header waypoint" id="js-header">
             <div class="header-nav-mobile">
                 <button class="menu-button" id="open-button">Open Menu</button>
             </div>
@@ -96,21 +90,21 @@
                     </li>
                 </ul>
             </nav>
-            <div class="header-big-content js-scroll-reveal js-fadeInUp">
-                <img class="header-big-img" src="images/img-profile-2.png" alt="photo de profile">
+            <div class="header-content js-scroll-reveal js-fadeInUp">
+                <img class="header-img" src="images/img-profile-2.png" alt="photo de profile">
                 <h1 class="page-title">
                     <span class="page-title-main">Front-end<br>Web Developer</span>
                     <span class="page-title-second">Located in New-Zealand</span>
                 </h1>
                 <button class="btn-down anim-bounceVertical" data-href-bis="#portfolio"></button>
             </div>
-            <canvas class="header-big-canvas" id="js-canvas"></canvas>
-            <div class="header-big-bg1"></div>
-            <div class="header-big-bg2"></div>
-            <div class="header-big-bg3"></div>
-            <div class="header-big-bg4"></div>
-            <div class="header-big-stars-big"></div>
-            <div class="header-big-stars-small"></div>
+            <canvas class="header-canvas" id="js-canvas"></canvas>
+            <div class="header-bg1"></div>
+            <div class="header-bg2"></div>
+            <div class="header-bg3"></div>
+            <div class="header-bg4"></div>
+            <div class="header-stars-big"></div>
+            <div class="header-stars-small"></div>
         </header>
 
         <section id="portfolio" class="portfolio-section waypoint">
@@ -127,11 +121,11 @@
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal1" class="project-link" href="#animatedModal1" title="">
                         <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <img class="project-img" src="images/thumb-ftv.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
                                     <h3 class="project-title">FranceTV Sport</h3>
-                                    <p class="project-txt">This project is a complete redisign of the Sport platform</p>
+                                    <p class="project-txt">This project is a complete redesign of the sport platform</p>
                                 </div>
                                 <div class="project-seemore">
                                     <span class="seemore-txt">See more</span>
@@ -145,7 +139,7 @@
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal2" class="project-link" href="#animatedModal2" title="">
                         <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <img class="project-img" src="images/thumb-univadis.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
                                     <h3 class="project-title">Univadis</h3>
@@ -163,7 +157,7 @@
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal3" class="project-link" href="#animatedModal3" title="">
                         <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <img class="project-img" src="images/thumb-chanel.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
                                     <h3 class="project-title">Chanel</h3>
@@ -181,7 +175,7 @@
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal4" class="project-link" href="#animatedModal4" title="">
                         <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <img class="project-img" src="images/thumb-chaumet.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
                                     <h3 class="project-title">Chaumet</h3>
@@ -199,7 +193,7 @@
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal5" class="project-link" href="#animatedModal5" title="">
                         <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <img class="project-img" src="images/thumb-traceone.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
                                     <h3 class="project-title">Traceone</h3>
@@ -217,7 +211,7 @@
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal6" class="project-link" href="#animatedModal6" title="">
                         <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <img class="project-img" src="images/thumb-jll.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
                                     <h3 class="project-title">Jean-Loup Lacroix</h3>
@@ -235,7 +229,7 @@
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal7" class="project-link" href="#animatedModal7" title="">
                         <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <img class="project-img" src="images/thumb-les-evades.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
                                     <h3 class="project-title">Les Évadés</h3>
@@ -253,7 +247,7 @@
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal8" class="project-link" href="#animatedModal8" title="">
                         <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <img class="project-img" src="images/thumb-instachef.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
                                     <h3 class="project-title">Instachef</h3>
@@ -271,7 +265,7 @@
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal9" class="project-link" href="#animatedModal9" title="">
                         <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <img class="project-img" src="images/thumb-eco-verdure.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
                                     <h3 class="project-title">Eco-verdure</h3>
@@ -289,7 +283,7 @@
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal10" class="project-link" href="#animatedModal10" title="">
                         <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <img class="project-img" src="images/thumb-norclair.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
                                     <h3 class="project-title">Norclair</h3>
@@ -307,11 +301,11 @@
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal11" class="project-link" href="#animatedModal11" title="">
                         <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <img class="project-img" src="images/thumb-folio-for-jira.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
                                     <h3 class="project-title">Folio for Jira</h3>
-                                    <p class="project-txt">This project is a new website</p>
+                                    <p class="project-txt">This project is a new website for an add-on vendor within the Atlassian ecosystem</p>
                                 </div>
                                 <div class="project-seemore">
                                     <span class="seemore-txt">See more</span>
@@ -325,7 +319,7 @@
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal12" class="project-link" href="#animatedModal12" title="">
                         <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <img class="project-img" src="images/thumb-pcg.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
                                     <h3 class="project-title">PCG Carmon</h3>
@@ -343,7 +337,7 @@
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal13" class="project-link" href="#animatedModal13" title="">
                         <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <img class="project-img" src="images/thumb-ssj.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
                                     <h3 class="project-title">SSJ Foundation</h3>
@@ -361,7 +355,7 @@
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal14" class="project-link" href="#animatedModal14" title="">
                         <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <img class="project-img" src="images/thumb-1900.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
                                     <h3 class="project-title">Medical clinic 1900</h3>
@@ -379,7 +373,7 @@
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal15" class="project-link" href="#animatedModal15" title="">
                         <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <img class="project-img" src="images/thumb-madysta.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
                                     <h3 class="project-title">Madysta</h3>
@@ -397,29 +391,11 @@
                 <article class="project-item js-scroll-reveal js-fadeInUp">
                     <a id="trigger-modal16" class="project-link" href="#animatedModal16" title="">
                         <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
+                            <img class="project-img" src="images/thumb-crossfit.jpg" alt="">
                             <figcaption class="project-caption">
                                 <div class="project-content">
                                     <h3 class="project-title">Crossfit Trois-Rivières</h3>
                                     <p class="project-txt">CrossFit T-R est un centre de conditionnement physique offrant des cours de groupe coachés et supervisés</p>
-                                </div>
-                                <div class="project-seemore">
-                                    <span class="seemore-txt">See more</span>
-                                    <span class="seemore-ico"></span>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </article>
-                <!-- MJBC Collection -->
-                <article class="project-item js-scroll-reveal js-fadeInUp">
-                    <a id="trigger-modal17" class="project-link" href="#animatedModal17" title="">
-                        <figure class="project-figure">
-                            <img class="project-img" src="images/img-test-1.jpg" alt="">
-                            <figcaption class="project-caption">
-                                <div class="project-content">
-                                    <h3 class="project-title">MJBC Collection</h3>
-                                    <p class="project-txt">Importateur - Distributeur de designers renommés et marques haut de gamme</p>
                                 </div>
                                 <div class="project-seemore">
                                     <span class="seemore-txt">See more</span>
@@ -442,7 +418,7 @@
                 <div class="list-keywords2" style="display: none;">
                     <p><strong>a fast-thinking environment</strong></p>
                     <p><strong>your team</strong></p>
-                    <p><strong>an Agile Scrum environment</strong></p>
+                    <p><strong>Agile Scrum environment</strong></p>
                 </div>
                 <div class="tagline-item">
                     <p class="tagline-txt">
@@ -555,42 +531,48 @@
                 </li>
             </ul>
 
-            <ul class="quality-list">
-                <li class="quality-item">
+            <ul class="page-wrapper-lg quality-list">
+                <li class="quality-item js-scroll-reveal">
                     <div class="quality-title">English</div>
-                    <div class="quality-bar">
-                        <div class="js-scroll-reveal quality-bar-inner" data-percent="85%"></div>
-                    </div>
+                    <svg class="quality-progress" viewBox="0 0 100 100">
+                        <circle class="progress-circle progress-circle--meter" cx="50%" cy="50%" r="45" stroke-width="10" />
+                        <circle class="progress-circle progress-circle--value" cx="50%" cy="50%" r="45" stroke-width="10" data-percent="85" />
+                    </svg>
                 </li>
-                <li class="quality-item">
+                <li class="quality-item js-scroll-reveal">
                     <div class="quality-title">Open-minded</div>
-                    <div class="quality-bar">
-                        <div class="js-scroll-reveal quality-bar-inner" data-percent="92%"></div>
-                    </div>
+                    <svg class="quality-progress" viewBox="0 0 100 100">
+                        <circle class="progress-circle progress-circle--meter" cx="50%" cy="50%" r="45" stroke-width="10" />
+                        <circle class="progress-circle progress-circle--value" cx="50%" cy="50%" r="45" stroke-width="10" data-percent="85" />
+                    </svg>
                 </li>
-                <li class="quality-item">
+                <li class="quality-item js-scroll-reveal">
                     <div class="quality-title">Creativity</div>
-                    <div class="quality-bar">
-                        <div class="js-scroll-reveal quality-bar-inner" data-percent="88%"></div>
-                    </div>
+                    <svg class="quality-progress" viewBox="0 0 100 100">
+                        <circle class="progress-circle progress-circle--meter" cx="50%" cy="50%" r="45" stroke-width="10" />
+                        <circle class="progress-circle progress-circle--value" cx="50%" cy="50%" r="45" stroke-width="10" data-percent="85" />
+                    </svg>
                 </li>
-                <li class="quality-item">
+                <li class="quality-item js-scroll-reveal">
                     <div class="quality-title">Methodical</div>
-                    <div class="quality-bar">
-                        <div class="js-scroll-reveal quality-bar-inner" data-percent="95%"></div>
-                    </div>
+                    <svg class="quality-progress" viewBox="0 0 100 100">
+                        <circle class="progress-circle progress-circle--meter" cx="50%" cy="50%" r="45" stroke-width="10" />
+                        <circle class="progress-circle progress-circle--value" cx="50%" cy="50%" r="45" stroke-width="10" data-percent="85" />
+                    </svg>
                 </li>
-                <li class="quality-item">
+                <li class="quality-item js-scroll-reveal">
                     <div class="quality-title">Inquisitive</div>
-                    <div class="quality-bar">
-                        <div class="js-scroll-reveal quality-bar-inner" data-percent="86%"></div>
-                    </div>
+                    <svg class="quality-progress" viewBox="0 0 100 100">
+                        <circle class="progress-circle progress-circle--meter" cx="50%" cy="50%" r="45" stroke-width="10" />
+                        <circle class="progress-circle progress-circle--value" cx="50%" cy="50%" r="45" stroke-width="10" data-percent="85" />
+                    </svg>
                 </li>
-                <li class="quality-item">
+                <li class="quality-item js-scroll-reveal">
                     <div class="quality-title">Cooking</div>
-                    <div class="quality-bar">
-                        <div class="js-scroll-reveal quality-bar-inner" data-percent="60%"></div>
-                    </div>
+                    <svg class="quality-progress" viewBox="0 0 100 100">
+                        <circle class="progress-circle progress-circle--meter" cx="50%" cy="50%" r="45" stroke-width="10" />
+                        <circle class="progress-circle progress-circle--value" cx="50%" cy="50%" r="45" stroke-width="10" data-percent="85" />
+                    </svg>
                 </li>
             </ul>
 
@@ -768,8 +750,8 @@
                     <h2 class="section-title">A few words about me:</h2>
                     <p class="section-intro">Originally from Paris, France, I am coming to New-Zealand in October 2017 with a Working Holiday Visa. I am looking for the opportunity to progress my professional career as a front-end developer in Wellington. Beside my enthusiasm about the Web and emerging technologies the Web, I like sport, hiking, travelling, photography, board games, cinema and exhibitions.<br>
                     You want to find out what I studied before I started learning Web Development ?<br>
-                    You want to know more detail about my skills, past experiences or my hobbies ?<br>
-                    You want to talk to a reference that can tell you more about me ?</p>
+                    You want to know more about my skills, past experiences or my hobbies ?<br>
+                    You wish to talk to a reference that can tell you more about me ?</p>
                 </div>
                 <a href="download/cv-nz.pdf" target="_blank" class="btn-primary--white js-download" download="Kevin-Lacroix-Frontend-CV.pdf">Download my CV</a>
             </div>
@@ -801,6 +783,7 @@
 
         <!-- Modals -->
         <!-- To close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
+        <!-- Thumbs are 504px / 378px -->
 
         <!-- FranceTV Sport -->
         <div id="animatedModal1" class="modal-block">
@@ -884,7 +867,8 @@
         <!-- Chanel -->
         <div id="animatedModal3" class="modal-block">
             <div class="modal-header">
-                <div class="modal-header-inner">Chanel</h3>
+                <div class="modal-header-inner">
+                    <h3 class="modal-title">Chanel</h3>
                     <span class="close-animatedModal3 modal-btn-close"></span>
                 </div>
             </div>
@@ -1237,17 +1221,60 @@
             </div>
         </div>
         <!-- Madysta -->
-        www.madysta.ca
+        <div id="animatedModal15" class="modal-block">
+            <div class="modal-header">
+                <div class="modal-header-inner">
+                    <h3 class="modal-title">Madysta</h3>
+                    <span class="close-animatedModal15 modal-btn-close"></span>
+                </div>
+            </div>
+            <div class="modal-content">
+                <img src="images/img-test-big-1.jpg" alt="" class="modal-img">
+                <p class="modal-txt">The project was the creation of a new website for a client of Acolyte Communication. It is a showcase website. The Madysta Group offers turnkey solutions for the construction and maintenance of wireless telecommunications infrastructures.</p>
+                <h4 class="modal-subtitle">Technical stack:</h4>
+                <ul class="modal-list">
+                    <li class="modal-item">Bootstrap</li>
+                    <li class="modal-item">Less</li>
+                    <li class="modal-item">jQuery</li>
+                </ul>
+                <p class="modal-txt">
+                    <a href="http://www.madysta.ca/en">Check the website</a>
+                </p>
+                <p class="modal-btn">
+                    <button class="close-animatedModal15">Close project</button>
+                </p>
+            </div>
+        </div>
         <!-- Crossfit Trois-Rivières -->
-        www.cf3r.com
-        <!-- MJBC Collection -->
-
-        <!-- End dynamic content for home page -->
+        <div id="animatedModal16" class="modal-block">
+            <div class="modal-header">
+                <div class="modal-header-inner">
+                    <h3 class="modal-title">Madysta</h3>
+                    <span class="close-animatedModal16 modal-btn-close"></span>
+                </div>
+            </div>
+            <div class="modal-content">
+                <img src="images/img-test-big-1.jpg" alt="" class="modal-img">
+                <p class="modal-txt">The project was the creation of a new website for a client of Acolyte Communication. The website presents the crossfit club and allow to make a reservation for a course.</p>
+                <h4 class="modal-subtitle">Technical stack:</h4>
+                <ul class="modal-list">
+                    <li class="modal-item">Bootstrap</li>
+                    <li class="modal-item">Less</li>
+                    <li class="modal-item">jQuery</li>
+                </ul>
+                <p class="modal-txt">
+                    <a href="http://www.cf3r.com">Check the website</a>
+                </p>
+                <p class="modal-btn">
+                    <button class="close-animatedModal16">Close project</button>
+                </p>
+            </div>
+        </div>
 
         <footer id="contact" class="page-footer waypoint">
             <div class="section-header--dark">
                 <h2 class="section-title">Contact me</h2>
-                <p class="section-intro">You are interested in my profile ? You think you may have a position for me within your team ? You want to ask me a question regarding my working Visa in New-Zealand ? Feel free to use the form below to send me a message. I will be physically available for job interviews from the middle/end of october 2017 in Wellington.</p>
+                <p class="section-intro">You are interested in my profile ? You think you may have a position for me within your team ? You want to ask me a question regarding my working Visa in New-Zealand ? Feel free to use the form below to send me a message. I will be physically available for job interviews from the middle of october 2017 in Wellington.</p>
             </div>
             <div class="page-wrapper-md">
                 <form class="js-scroll-reveal">

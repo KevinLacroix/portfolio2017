@@ -12,6 +12,10 @@
     background: rgba(0,0,0,0.8);
     cursor: pointer;
     // pointer-events: none;
+    @include breakpoint(max-width $mq-lg) {
+      top: 0 !important;
+      left: 0 !important;
+    }
   }
   .project-content {
     display: flex;
@@ -33,6 +37,7 @@
     justify-content: space-between;
     align-items: center;
     background: $red;
+    cursor: pointer;
     .seemore-txt {
       @include font(16, 4, $openSans);
       color: $white;

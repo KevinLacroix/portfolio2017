@@ -1,0 +1,28 @@
+// QUALITY ITEM
+
+.quality-item {
+  position: relative;
+  .quality-title {
+    @include font(18, 6, $openSans);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .progress-circle {
+    &.progress-circle--meter {
+      fill: $darknight;
+      stroke: $blueMiddle;
+    }
+    &.progress-circle--value {
+      fill: none;
+      stroke: $blueDark;
+      stroke-linecap: round;
+      transform: rotate(-90deg);
+      transform-origin: center center;
+    }
+  }
+}
