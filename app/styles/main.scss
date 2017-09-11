@@ -293,6 +293,14 @@
   .btn-submit {
     width: 100%;
   }
+  .form-response {
+    @include font(14, 6, $openSansMedium);
+    display: block;
+    margin-top: -8px;
+    text-align: center;
+    font-size: 14px;
+    color: $red;
+  }
 }
 
 // Form field

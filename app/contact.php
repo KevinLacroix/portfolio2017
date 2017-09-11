@@ -2,7 +2,7 @@
 
   if( isset( $_POST['name'], $_POST['email'], $_POST['subject'], $_POST['message'] ) ) {
 
-    $to = 'kevin.78120@yahoo.fr';
+    $to = 'kevin.lacroix.nz@gmail.com';
 
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -59,7 +59,7 @@
     //=====Envoi de l'e-mail.
     mail($to, $title, $message, $header);
     //==========
-    echo "Votre message a bien été envoyé " . $name . ". Merci !";
+    echo "your message was sent successfully " . $name . ". Thanks!";
 
   }
 
