@@ -299,16 +299,16 @@
 
 .form-field {
   position: relative;
-  input:focus ~ .form-placeholder,
-  textarea:focus ~ .form-placeholder,
-  input:not(:focus):valid ~ .form-placeholder,
-  textarea:not(:focus):valid ~ .form-placeholder {
+  input:focus ~ .form-label,
+  textarea:focus ~ .form-label,
+  input:not(:focus):valid ~ .form-label,
+  textarea:not(:focus):valid ~ .form-label {
     top: -15px;
     padding-left: 0;
     color: $white;
     font-size: 10px;
   }
-  .form-placeholder {
+  .form-label {
     @include font(14, 6, $openSans);
     padding-left: 12px;
     position: absolute;
@@ -316,6 +316,11 @@
     pointer-events: none;
     transition: all 0.25s ease-out;
     color: $blackish;
+    abbr {
+      color: $red;
+      border: 0;
+      text-decoration: none;
+    }
   }
 }
 

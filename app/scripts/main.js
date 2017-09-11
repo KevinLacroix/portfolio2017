@@ -102,7 +102,7 @@ Portfolio = {
 
     var waypoints = $('.waypoint');
     waypoints.waypoint(function(direction){
-      if (direction === "down") {
+      if (direction === 'down') {
         var matchingLink = $('a[data-href="#' + this.element.id + '"]');
         $('.header-nav').find('.header-nav-link').removeClass('is-active');
         matchingLink.addClass('is-active');
@@ -110,7 +110,7 @@ Portfolio = {
     }, {offset: '200px'});
 
     waypoints.waypoint(function(direction){
-      if (direction === "up") {
+      if (direction === 'up') {
         var matchingLink = $('a[data-href="#' + this.element.id + '"]');
         $('.header-nav').find('.header-nav-link').removeClass('is-active');
         matchingLink.addClass('is-active');
@@ -155,11 +155,11 @@ Portfolio = {
   },
 
   postForm: function() {
-    $(".form-footer").on("submit", function(e) {
+    $('.form-footer').on('submit', function(e) {
 
       e.preventDefault();
 
-      if(! ( $("#name").val() && $("#phone").val() && $("#email").val() && $("#company").val() && $("#subject").val() && $("#message").val() )) {
+      if(! ( $('#name').val() && $('#phone').val() && $('#email').val() && $('#company').val() && $('#subject').val() && $('#message').val() )) {
         return false;
       } else {
         $.ajax({
@@ -167,8 +167,8 @@ Portfolio = {
           url: '/contact.php',
           data: $('.form-footer').serialize(),
           success: function(response) {
-            $(".form-response").html(response);
-            $(".form-footer")[0].reset();
+            $('.form-response').html(response);
+            $('.form-footer')[0].reset();
           }
         });
       }

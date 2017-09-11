@@ -118,7 +118,7 @@ $(function() {
               strokeDashoffset = circumference * (1 - progressValue / 100);
 
           $circle.css({'stroke-dasharray' : circumference, 'stroke-dashoffset' : circumference})
-          $circle.animate({'stroke-dashoffset' : strokeDashoffset}, 1500, "linear");
+          $circle.animate({'stroke-dashoffset' : strokeDashoffset}, 1500, 'linear');
           $this.addClass('was-animated');
         }
 

@@ -37,10 +37,23 @@ a {
   margin: 0 auto;
 }
 
+// Used for Modal Link
+
 %btn-line {
   @include font(16, 6, $openSansMedium);
   position: relative;
   padding-bottom: 2px;
+  color: $white;
+  transition: color 0.3s ease-out;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: $greyDark;
+  }
   &:after {
     content: "";
     position: absolute;
@@ -49,9 +62,10 @@ a {
     width: 100%;
     height: 1px;
     background: $white;
-    transition: width 555ms cubic-bezier(.86,0,.07,1);
+    transition: width 0.55s cubic-bezier(0.86, 0, 0.07, 1);
   }
   &:hover {
+    color: $greyDark;
     &:after {
       left: auto;
       right: 0;
@@ -133,7 +147,8 @@ input, textarea {
   background: $grey;
 }
 
-@supports(display:grid) {
+// BUG not resolved by gulp-combine-mq: @supports(display:grid) {} is removed
+.cssgrid {
   .legacy-css-grid {
     display: none;
   }
