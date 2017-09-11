@@ -20,11 +20,11 @@
   }
   .modal-title {
     @include font(32, 6, $openSans);
-    color: $grey;
+    color: $greyLight;
     text-transform: uppercase;
   }
   .modal-subtitle {
-    @include font(18, 6, $openSans);
+    @include font(18, 6, $openSansMedium);
     margin-bottom: 15px;
     text-transform: uppercase;
   }
@@ -43,6 +43,22 @@
       margin-top: -1px;
     }
   }
+  .modal-keywords {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+    .keyword-item {
+      margin-right: 8px;
+    }
+  }
+  .modal-link-wrapper {
+    display: flex;
+    align-items: flex-end;
+  }
+  .modal-link {
+    @extend %btn-line;
+    margin-right: 10px;
+  }
   .modal-btn-close {
     @include sprite("ico-close");
     cursor: pointer;
@@ -54,7 +70,7 @@
   .modal-content {
     @extend %wrapper-md;
     padding-top: 60px;
-    padding-bottom: 10px;
+    padding-bottom: 40px;
     @include breakpoint($mq-md) {
       padding-top: 80px;
     }

@@ -152,6 +152,28 @@ Portfolio = {
         'transform': 'rotate(-' + wScroll / 5 + 'deg)'
       });
     });
+  },
+
+  postForm: function() {
+    $(".form-footer").on("submit", function(e) {
+
+      e.preventDefault();
+
+      if(! ( $("#name").val() && $("#phone").val() && $("#email").val() && $("#company").val() && $("#subject").val() && $("#message").val() )) {
+        return false;
+      } else {
+        $.ajax({
+          type: 'POST',
+          url: '/contact.php',
+          data: $('.form-footer').serialize(),
+          success: function(response) {
+            $(".form-response").html(response);
+            $(".form-footer")[0].reset();
+          }
+        });
+      }
+
+    });
   }
 
 };
@@ -163,6 +185,12 @@ $(document).ready(function() {
   Portfolio.bindSticky();
   Portfolio.smoothScroll();
   Portfolio.stickyNav();
+
+  // POST FORM
+
+  if ( $('.form-footer').length ) {
+    Portfolio.postForm();
+  }
 
   // DOWNLOAD CV
 
@@ -184,7 +212,7 @@ $(document).ready(function() {
       typeSpeed: 50,
       startDelay: 1000,
       loop: true,
-      loopCount: 3,
+      loopCount: 5,
       backSpeed: 30,
       shuffle: false,
       backDelay: 3000
@@ -194,7 +222,7 @@ $(document).ready(function() {
       typeSpeed: 50,
       startDelay: 1000,
       loop: true,
-      loopCount: 3,
+      loopCount: 5,
       backSpeed: 30,
       shuffle: false,
       backDelay: 3000

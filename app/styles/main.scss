@@ -41,6 +41,11 @@
   }
   .project-item {
     margin-bottom: 30px;
+    &:last-child {
+      @include breakpoint($mq-md $mq-lg) {
+        grid-column: 2;
+      }
+    }
     @include breakpoint($mq-sm) {
       margin-bottom: 0;
     }
@@ -70,13 +75,17 @@
     margin-bottom: 40px;
   }
   .skill-list {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     @include breakpoint($mq-md) {
       display: grid;
       grid-template: repeat(7, 40px) / 1fr 1fr;
       grid-auto-flow: column;
       grid-gap: 10px 60px;
-      margin-bottom: 50px;
+      margin-bottom: 60px;
+    }
+    @include breakpoint($mq-lg) {
+      grid-gap: 10px 80px;
+      margin-bottom: 80px;
     }
   }
   .skill-item {
@@ -86,14 +95,35 @@
     }
   }
   .quality-list {
-    display: flex;
+    display: grid;
+    grid-template: auto / 1fr 1fr;
+    grid-gap: 20px;
+    @include breakpoint($mq-sm) {
+      grid-template: auto / 1fr 1fr 1fr;
+      grid-gap: 30px;
+    }
+    @include breakpoint($mq-md) {
+      grid-template: auto / 1fr 1fr 1fr 1fr;
+      grid-gap: 40px;
+    }
+    @include breakpoint($mq-lg) {
+      grid-template: auto / 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    li {
+      &:nth-child(5) {
+        @include breakpoint($mq-md $mq-lg) {
+          grid-column: 2;
+        }
+      }
+      &:nth-child(6) {
+        @include breakpoint($mq-md $mq-lg) {
+          grid-column: 3;
+        }
+      }
+    }
   }
   .quality-item {
-    flex: 1 1 20%;
-    margin-right: 20px;
-    &:last-child {
-      margin-right: 0;
-    }
+
   }
 }
 
@@ -105,14 +135,17 @@
   overflow: hidden;
   padding: 70px 0 60px 0;
   background: $white;
-  @include breakpoint($mq-md) {
+  @include breakpoint($mq-sm) {
     padding-top: 80px;
   }
-  @include breakpoint($mq-xl) {
+  @include breakpoint($mq-md) {
     padding-top: 90px;
   }
-  @include breakpoint($mq-xxl) {
+  @include breakpoint($mq-xl) {
     padding-top: 100px;
+  }
+  @include breakpoint($mq-xxl) {
+    padding-top: 110px;
   }
   &:before {
     @include pseudoElement();
@@ -253,12 +286,36 @@
   .form-half {
     display: flex;
     justify-content: space-between;
-    input {
+    .form-field {
       width: calc(50% - 10px);
     }
   }
   .btn-submit {
     width: 100%;
+  }
+}
+
+// Form field
+
+.form-field {
+  position: relative;
+  input:focus ~ .form-placeholder,
+  textarea:focus ~ .form-placeholder,
+  input:not(:focus):valid ~ .form-placeholder,
+  textarea:not(:focus):valid ~ .form-placeholder {
+    top: -15px;
+    padding-left: 0;
+    color: $white;
+    font-size: 10px;
+  }
+  .form-placeholder {
+    @include font(14, 6, $openSans);
+    padding-left: 12px;
+    position: absolute;
+    top: 9px;
+    pointer-events: none;
+    transition: all 0.25s ease-out;
+    color: $blackish;
   }
 }
 
