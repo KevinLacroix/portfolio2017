@@ -1,14 +1,16 @@
 <?php
 
-  if( isset( $_POST['name'], $_POST['email'], $_POST['subject'], $_POST['message'] ) ) {
+  if( isset( $_POST['name'], $_POST['email'], $_POST['phone'], $_POST['company'], $_POST['subject'], $_POST['message'] ) ) {
 
     $to = 'kevin.lacroix.nz@gmail.com';
 
     $name = $_POST['name'];
     $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $company = $_POST['company'];
     $subject = $_POST['subject'];
     $message_txtarea = $_POST['message'];
-    $title = "Envoi depuis le formulaire de contact du site";
+    $title = "Contact from www.kevin-lacroix.com";
 
     // On filtre les serveurs qui rencontrent des bogues.
     if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $to)) {
@@ -19,6 +21,8 @@
 
     $message_body = "NOM : " . $name . $passage_ligne;
     $message_body .= "EMAIL : " . $email . $passage_ligne;
+    $message_body .= "PHONE : " . $phone . $passage_ligne;
+    $message_body .= "COMPANY : " . $company . $passage_ligne;
     $message_body .= "SUJET : " . $subject . $passage_ligne;
     $message_body .= "MESSAGE : " . $message_txtarea;
 
@@ -59,7 +63,7 @@
     //=====Envoi de l'e-mail.
     mail($to, $title, $message, $header);
     //==========
-    echo "your message was sent successfully " . $name . ". Thanks!";
+    echo "Your message was sent successfully " . $name . ". Thanks!";
 
   }
 
