@@ -45,10 +45,10 @@
   }
   .modal-keywords {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     margin-bottom: 20px;
     .keyword-item {
-      margin-right: 8px;
+      margin: 0 8px 8px 0;
     }
   }
   .modal-link-wrapper {

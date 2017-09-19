@@ -129,6 +129,9 @@ Portfolio = {
       $('html, body').animate({
         scrollTop: $(anchor).offset().top - (is.desktop ? offset : 0)
       }, 'slow');
+      // if ( $('body').hasClass('show-menu') ) {
+      //   $('body').removeClass('show-menu');
+      // }
       return false;
     });
     $('[data-href-bis]').click(function() {
