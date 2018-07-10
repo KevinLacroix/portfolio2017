@@ -260,6 +260,13 @@ $(document).ready(function() {
 
   if ( $('.project-link').length ) {
 
+    $('#trigger-modal0').animatedModal({
+      modalTarget:'animatedModal0',
+      animatedIn:'zoomIn',
+      animatedOut:'bounceOut',
+      color:'rgba(241,96,88,0.96)'
+    });
+
     $('#trigger-modal1').animatedModal({
       modalTarget:'animatedModal1',
       animatedIn:'zoomIn',

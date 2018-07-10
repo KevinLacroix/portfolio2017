@@ -70,7 +70,7 @@
   padding: 60px 0;
   background: $red;
   color: $white;
-  .section-header--dark { margin-bottom: 40px; }
+  // .section-header--dark { margin-bottom: 40px; }
   &:before {
     @include breakpoint($mq-md) {
       @include triangle(bottom, $white);
